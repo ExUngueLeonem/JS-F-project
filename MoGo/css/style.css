@@ -17,6 +17,16 @@ h1, h2, h3, h4, h5, h6 {
     margin: 0;
 }
 
+hr {
+    display: block;
+    width: 100%;
+    height: 1px;
+    margin: 40px 0;
+    
+    border: 0;
+    background-color: #e5e5e5;
+}
+
 /* Container */
 .container {
     width: 100%;
@@ -229,10 +239,6 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .section__header {
-
-}
-
-.section__header {
     width: 100%;
     max-width: 950px;
     margin: 0 auto 40px;
@@ -371,20 +377,40 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Service */
 
-.service {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    
+.services {
+    display: flex;    
 }
 
-.service__inner {
-    width: 350px;
-    height: 130px;
-    border: 1px solid #333;
+.services__item {
+    flex: 1 1 0;
+    margin-top: 20px;
+    padding-left: 90px;
+    padding-right: 20px;
+    position: relative;
+
 }
 
+.services__icon {
+    position: absolute;
+    top: 0;
+    left: 30px;
+    z-index: 1;
+}
 
+.service__title {
+    margin-bottom: 10px;
+
+    font-size: 14px;
+    color: #333;
+    text-transform: uppercase;
+    font-weight: 300;
+}
+
+.services__text {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: #999999;
+}
 
 
 
