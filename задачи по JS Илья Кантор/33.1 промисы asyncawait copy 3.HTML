@@ -1,0 +1,26 @@
+<!DOCTYPE html >
+<html>
+<head>
+</head>
+<body>
+</body>
+
+<script>
+let url = 'https://jsonplaceholder.typicode.com/todos/1';
+
+async function loadJson(url) {
+let response = fetch(url)
+
+if (response.status == 200) {
+    let json = response.json();
+return json
+} else {
+throw new Error(response.status);
+}
+}
+
+loadJson('no-such-user.json') // (3)
+.catch(alert); // Error: 404
+
+</script>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html >
+<html>
+<head>
+</head>
+<body>
+</body>
+<script>
+let x = prompt("введите Х", "");
+let y = prompt("введите Y", "");
+
+let calculator = {
+// ... ваш код ...
+x,
+y,
+    read: function() {
+        this.x = prompt("введите Х", "");
+        this.y = prompt("введите Y", "");
+    }
+for ( let key in calculator){
+    alert(calculator[key]);
+}
+
+};
+
+/*
+calculator.read();
+alert( calculator.sum() );
+alert( calculator.mul() );
+
+</script>
+</html>

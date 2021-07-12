@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+</body>
+<script> 
+'use strict'
+function findOdd(A) {
+  A.sort();
+  while ( A[0] - A[1] == 0) A.splice(0, 2);
+  console.log(A);
+  return A;
+}
+
+
+findOdd([20,1,-1,2,-2,3,3,5,5,1,2,4,20,4,-1,-2,5]);
+
+
+/* 
+doTest([20,1,-1,2,-2,3,3,5,5,1,2,4,20,4,-1,-2,5], 5);
+  doTest([1,1,2,-2,5,2,4,4,-1,-2,5], -1);
+  doTest([20,1,1,2,2,3,3,5,5,4,20,4,5], 5);
+  doTest([10], 10);
+  doTest([1,1,1,1,1,1,10,1,1,1,1], 10);
+  doTest([5,4,3,2,1,5,4,3,2,10,10], 1); 
+  */
+</script>
+
+</html>

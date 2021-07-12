@@ -1,0 +1,43 @@
+<!DOCTYPE html >
+<html>
+<head>
+</head>
+<body>
+</body>
+<script>
+/*   
+function sumb(a) {
+  
+  return function bi(b){ 
+    return sumM = a + b 
+  }
+
+}
+
+console.log( sumb(4)(2) )
+ */
+</script>
+<script>
+
+  /* .. ваш код для inBetween и inArray */
+let arr = [1, 2, 3, 4, 5, 6, 7];
+
+function inBetween(a, b){
+  return function(element) { 
+    return element >= a && element <= b 
+  }
+}
+
+function inArray(arr){
+  //console.log(...args);
+  return function(element) {
+    return arr.includes(element)
+  }
+}
+
+
+console.log( arr.filter(inBetween(3, 6)) ); // 3,4,5,6
+console.log( arr.filter(inArray([1, 2, 10])) ); // 1,2
+
+</script>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html >
+<html>
+<head>
+</head>
+<body>
+</body>
+<script>
+/* 
+new Promise(function(resolve, reject) {
+setTimeout(() => { new Promise( function(resolve, reject) {
+throw new Error("Whoops!");
+}) 
+}, 1000);
+}).catch(alert);
+ */
+</script>
+
+
+<script>
+/* 
+new Promise( async function(resolve, reject) {
+setTimeout(() => { 
+throw new Error("Whoops!"); 
+}, 1000);
+}).catch(alert);
+ */
+
+ function foo(f) {
+    let a = 5;
+   function bee(m) {
+     goo(a)
+   }
+   bee()
+ }
+
+function goo(x) {
+  console.log(x);
+}
+
+foo()
+goo()
+goo.apply(foo)
+
+</script>
+
+</html>

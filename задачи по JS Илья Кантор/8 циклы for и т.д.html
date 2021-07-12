@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+</body>
+<script>//При помощи цикла for выведите чётные числа
+// от 2 до 10 .
+    /*for ( let i = 2;  i <= 10; ++i )
+    {
+        if ( i % 2 == 0 ) alert( i );
+    }
+</script>
+<script>//Перепишите код, заменив цикл for на while , 
+//без изменения поведения цикла.
+/*for (let i = 0; i < 3; i++) {
+alert( `number ${i}!` );
+}
+</script>
+<script>
+    /*let i = 0;
+    while (i<3)
+    {alert( `number ${i}!` );
+    ++i
+    }
+    </script>
+    <script>//Напишите цикл, который предлагает prompt ввести число, большее 100 . Если
+            //посетитель ввёл другое число – попросить ввести ещё раз, и так далее.
+    /*
+        let number = 1
+        while (number <= 100)
+        {
+        number = prompt( "введите число больше 100", "" )
+        if (number > 100)
+            {
+            alert ( "спасибо" );
+            break;
+            } 
+        else ((number == null) || (number == ""))
+        alert( "ну лан" ) 
+        break;
+        }
+    </script>
+    <script>
+        //Напишите цикл, который предлагает prompt ввести число, большее 100 . Если
+        //посетитель ввёл другое число – попросить ввести ещё раз, и так далее.
+        /*
+        let num
+        do num = prompt("введите больше 100","")
+        while (num <= 100 && num)
+    </script>
+    <script>//Напишите код, который выводит все простые числа из интервала от 2 до n .
+/*let n = 2;
+let interval = prompt("число", "");
+for ( i = 2, interval >= i, i++ )
+{
+    while ( interval > n)
+    {
+        let a = 1
+        do   
+        {
+        a++
+        if (a == n - 1) alert ( a + 1 )
+        }
+        while (n % a > 0 ) ;
+        n++
+    }
+}    
+    </script>
+    <script>
+        let max = prompt("max", "");
+
+outnum:  
+for ( let num = 3 ; num <= max; num++)
+{
+	for ( let i = 2; num > i; i++)
+	{
+		if ( num % i == 0) 
+		continue outnum;
+	}
+
+alert( num );
+}
+        
+    </script>
+
+
+</html>

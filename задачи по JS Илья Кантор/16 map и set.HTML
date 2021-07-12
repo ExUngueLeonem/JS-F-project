@@ -1,0 +1,39 @@
+<!DOCTYPE html >
+<html>
+<head>
+</head>
+<body>
+</body>
+<script>
+let nowDate = new Date();
+let pastdate = new Date( 2021, 3, 29, 20, 29, 30);
+let delta = new Date();
+delta = nowDate - pastdate;
+console.log(nowDate);
+console.log(nowDate.getDate(),nowDate.getHours(),nowDate.getMinutes());
+
+function formatDate(pastdate) {
+  if ( delta < 1000 ) {
+    console.log( "прошло менее 1 секунды" );
+  }
+  else if ( delta < 60 * 1000 ) {
+    let n = Math.floor(( delta ) / 1000);
+    console.log( `${n} сек. назад` );
+  }
+  else if  ( delta < 60 * 60 * 1000 ) { 
+    let m = Math.floor(delta / ( 1000 * 60 ));
+    console.log(`${m} мин. назад`);
+  }
+  else {
+    console.log( `${nowDate.getFullYear()}.${nowDate.getMonth() + 1}.${
+    nowDate.getDate()} ${nowDate.getHours()}:${nowDate.getMinutes()}`);
+    //console.log(${});
+  }
+} 
+
+
+console.log(delta);
+//formatDate(date)
+formatDate(pastdate)
+</script>
+</html>

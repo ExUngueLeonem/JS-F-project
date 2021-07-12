@@ -1,0 +1,83 @@
+
+
+body {
+    color: rgb(71, 49, 49);
+    background-color: rgba(162, 252, 255, 0.623);
+    background-image: url("../img/plate.jpg");
+    font-family: 'Roboto Slab', serif;
+    font-size: 15px;
+    font-weight: 400;
+}
+
+* {
+    box-sizing: border-box;
+}
+/* 
+.fullcontent {
+    width: 1100px;
+    margin: 0 auto;
+    padding: 15px;
+    background-color: rgba(253, 253, 253, 0.897);
+} */
+/* header {
+    width: 1100px;
+    margin: 0 auto;
+    padding: 15px;
+    background-color: rgba(253, 253, 253, 0.897);
+} */
+
+main, header{
+    width: 1100px;
+    margin: 20px auto;
+    padding: 15px;
+    background-color: rgba(253, 253, 253, 0.897);
+}
+
+h1 {
+    font-weight: 700;
+}
+
+p {
+    text-indent: 30px;
+}
+
+table {
+    border: cadetblue;
+    background-color: rgb(240, 240, 240);
+    border-collapse: separate;
+    border-spacing: none;
+    border-style: solid;
+    border-collapse: collapse;
+    width: 80%;
+    margin: 5px auto;
+}
+
+td, th {
+    border: rgb(52, 87, 88);
+   /*  background-color: rgb(255, 210, 210); */
+    border-collapse: separate;
+    border-spacing: 0px;
+    border-style: solid;
+    padding: 5px;
+   
+}
+
+tr:nth-child(even) {
+    background-color: #EAF2D3;
+}
+tr:hover {
+    background-color: rgb(185, 200, 250);
+}
+
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+   /*  padding: 15px 15px; */
+   /*  width: 1000px; */
+}
+
+.mail {
+    font-size: 10px;
+}

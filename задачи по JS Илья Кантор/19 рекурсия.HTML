@@ -1,0 +1,74 @@
+<!DOCTYPE html >
+<html>
+<head>
+</head>
+<body>
+</body>
+<script>
+/* 
+let list = {
+  value: 1,
+  next: {
+    value: 2,
+    next: {
+      value: 3,
+      next: {
+        value: 4,
+        next: null
+      }
+    }
+  }
+};
+
+function printList(list) {
+  let tmp = list
+  console.log(tmp.value);
+  if (!(tmp.next)||(!(tmp.value) == undefined) ) return
+  printList(tmp.next);
+}
+
+printList(list);
+ */
+</script>
+<script>
+
+  let list = {
+    value: 1,
+    next: {
+      value: 2,
+      next: {
+        value: 3,
+        next: {
+          value: 4,
+          next: null
+        }
+      }
+    }
+  };
+  let arr = [];
+  function printList(list) {
+    let tmp = list
+    //console.log(tmp.value);
+    arr.push(tmp.value)
+    if (!(tmp.next)||(!(tmp.value) == undefined) ) return
+    printList(tmp.next);
+  }
+
+function reversePrintList(arr) {
+    
+  
+  arr.reverse()
+  for (let n in arr){
+    console.log(arr[n])
+  }
+}  
+printList(list);
+reversePrintList(arr);
+
+  console.log(arr);
+
+
+
+  
+  </script>
+</html>

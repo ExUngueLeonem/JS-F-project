@@ -1,0 +1,40 @@
+<!DOCTYPE html >
+<html>
+<head>
+</head>
+<body>
+</body>
+<script>
+'use strict';
+
+let rabbit = { 
+  paw: 4,
+  ear: 2,
+  colour: "red",
+  IsWantToEat: true,
+};
+
+let rabbit2 = new rabbit.constructor();
+
+function Dog(colour, name){
+  this.paw = 4;
+  this.ear = 2;
+  this.colour = colour;
+  this.IsWantToEat = true;
+  this.name = name;
+  this.bark = function() {
+   alert(` ${this.name} say: BARK !!!`);
+  };
+}
+
+let dog1 = new Dog("Black", "Nigga")
+let dog2 = new dog1.constructor("blue", "Rex");
+dog1.bark();
+console.log(dog1.name);
+console.log(dog2.name, dog2.colour);
+
+
+dog2.bark()
+
+</script>
+</html>

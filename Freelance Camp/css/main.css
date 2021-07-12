@@ -1,0 +1,110 @@
+body {
+    padding: 0;
+    margin: 0;
+    color: #000000;
+    font-size: 15px;
+    font-family: 'Vollkorn', serif;
+    font-weight: 400;
+    letter-spacing: 0.03em;
+    line-height: 1.55em;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+p {
+    letter-spacing: 0.03em;
+    line-height: 1.55em;
+    margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 400;
+    padding: 0;
+    margin: 0;
+    line-height: 1.4em;
+}
+
+.container {
+    width: 1110px;
+    margin: 0 auto;
+    /* border: 1px solid red; */
+}
+
+.header {
+    padding-top: 72px;
+}
+
+.header-content {
+    display: flex;
+justify-content: space-between;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 72px;
+}
+
+a {
+    color: #000000;
+    text-decoration: none;
+}
+
+.offer {
+    margin-bottom: 98px;
+    margin-top: 52px;
+}
+
+.place {
+    font-size: 18px;
+    margin-bottom: 21px;
+}
+
+.offer-title {
+    font-size: 45px;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+}
+
+.desc {
+    font-size: 18px;
+    margin-bottom: 21px;
+    margin-top: 21px;
+}
+
+.btn {
+    color: #fff;
+    background: #6A85E3;
+    font-size: 18px;
+    padding: 18px 30px;
+    font-weight: 700;
+    display: block;
+    width: 197px;
+    text-align: center;
+}
+
+.btn:hover {
+    background:#455db6;
+}
+
+.btn:active {
+    background:#4eb645;
+}
+
+.intro {
+    background: #EAEAEA;
+    padding: 30px;
+    width: 441px;
+}
+
+.intro-title {
+    font-weight: 700;
+    margin-bottom: 17px;
+}
+
+.bali-img {
+
+}

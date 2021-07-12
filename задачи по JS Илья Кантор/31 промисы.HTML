@@ -1,0 +1,18 @@
+<!DOCTYPE html >
+<html>
+<head>
+</head>
+<body>
+</body>
+<script>
+
+function delay(ms) {
+return bbq = new Promise( function (resolve, reject) {
+  setTimeout(() => resolve('gone done'), ms)
+})
+  // ваш код
+}
+delay(3000).then(() => alert('выполнилось через 3 секунды'));
+bbq.then( () => console.log(bbq));
+</script>
+</html>

@@ -1,0 +1,250 @@
+<!DOCTYPE html >
+<html>
+<head>
+</head>
+<body>
+</body>
+<script>
+/*
+let str0 = "my-n-i-g-g-a";
+let str2 = "list-style-image";
+let str3 = "-webkit-transition";
+let arrToStr
+
+function camelize(str1) {
+  let arr1 = str1.split('');
+  //console.log( arr1 );
+
+  while(arr1.indexOf('-') != -1){
+    arr1[arr1.indexOf('-') + 1] = arr1[arr1.indexOf('-') + 1].toUpperCase();
+    arr1.splice(arr1.indexOf('-'), 1);
+    //console.log( arr1 );
+  };
+return arrToStr = arr1.join('');
+}
+//console.log( arrToStr )
+
+console.log( camelize(str0) );
+console.log( camelize(str2) );
+console.log( camelize(str3) );
+
+//arr1[];
+//.toUpperCase()
+
+
+
+
+//camelize("background-color") == 'backgroundColor';
+//camelize("list-style-image") == 'listStyleImage';
+//camelize("-webkit-transition") == 'WebkitTransition';
+</script>
+<script>
+/* //фильтрация по диапазону
+let arr = [5, 3, 8, 1, 5, 8, 9, 6];
+let filtered = filterRange(arr, 9, 1);
+//filterRange(arr, 1, 9)
+
+function filterRange(arr, a, b){
+  let posA = arr.indexOf(a);
+  let posB = arr.indexOf(b);
+  if (posA < posB) return arr.slice( posA, posB + 1 )
+  return arr.slice( posB, posA + 1 )
+  
+}
+
+//alert( filtered ); // 3,1 (совпадающие значения)
+//alert( arr ); // 5,3,8,1 (без изменений)
+console.log( filtered );
+console.log ( arr );
+</script>
+<script>
+/*
+let arr = [5, 3, 8, 1, 2, 7, 8, 9];
+//filterRangeInPlace(arr, 1, 4); // удалены числа вне диапазона 1..4
+
+
+let a = +prompt('начало диапазона', '');
+let b = +prompt('конец диапазона', '');
+
+function callback(arr, elem, a, b){
+  for (let elem of arr)
+  return (arr.elem >= a && value <=b)
+}
+
+/*
+//console.log( callback() );
+  function filterRangeInPlace(arr, a, b){
+  //for ( let elem of arr ){
+  //  arr.splice(0, 1)
+    arr.filter(calback)
+
+  }
+}
+*/
+/*
+//arr.filter(callback)
+alert( arr.filter(callback) ); // [3, 1]
+
+</script>
+<script>/*
+
+
+let arr = [5, 3, 8, 1, 2, 7, 8, 9];
+
+console.log(arr);
+
+function filtered(arr, a, b){
+for ( let i = arr.length + 1; i >= 0 ; i-- ) {
+  if (arr[i] < a || arr[i] > b) {
+   arr.splice( i, 1 )
+  }
+}
+}
+filtered(arr, 2, 6)
+//console.log(arr.splice( 3, 1 ))
+
+console.log(arr)
+console.log( arr.length )
+</script>
+<script>/*
+
+let arr = [5, 2, 1, -10, 8];
+let a
+let b
+console.log(arr);
+
+/*
+function arrSortReverse(arr) {
+  sortNum()
+  function sortNum(a, b) {return a - b}
+arr.sort( sortNum( a, b))
+}
+*/
+/*
+arr.sort()
+arr.reverse()
+// ... ваш код для сортировки в обратном порядке
+console.log( arr ); // 8, 5, 2, 1, -10
+
+</script>
+<script>/*
+
+  let arr = [5, 2, 1, -10, 8];
+  let a
+  let b
+  console.log(arr);
+  
+  /*
+  function arrSortReverse(arr) {
+    sortNum()
+    function sortNum(a, b) {return a - b}
+  arr.sort( sortNum( a, b))
+  }
+  */
+ /*
+  arr.sort((a, b) => b - a)
+  //arr.reverse()
+  // ... ваш код для сортировки в обратном порядке
+  console.log( arr ); // 8, 5, 2, 1, -10
+  
+  </script>
+  <script>/*
+
+    let arr = ["HTML", "JavaScript", "CSS"];
+let sorted = copySorted(arr);
+console.log(arr);
+
+function copySorted(arr){
+  let arr1 = arr.slice()
+  arr1.sort()
+  return arr1
+}
+
+console.log( sorted ); // CSS, HTML, JavaScript
+console.log( arr ); // HTML, JavaScript, CSS (без изменений)
+
+
+  </script>
+  <script>
+
+//function Calculator(a, operator, b) = {
+  //this.a = a;
+  //this.operator
+
+//}
+/*
+let enter = prompt("", "");
+let calcArr = enter.split(' ')
+console.log(calcArr);
+let result
+if (calcArr[1] == '+')  
+result = +calcArr[0] + +calcArr[2];
+if (calcArr[1] == '-')
+result = +calcArr[0] - +calcArr[2];
+
+console.log(result);
+/*
+function calculation(){
+        let enter = prompt("", "");
+        let calcArr = enter.split(' ')
+        let result
+        if (calcArr[1] == '+')  
+        result = +calcArr[0] + +calcArr[2];
+        if (calcArr[1] == '-')
+        result = +calcArr[0] - +calcArr[2];
+        return result
+      }
+
+  </script>
+  <script>
+/*
+    function Calculator(arg1, operator, arg2) {
+          this.arg1 = arg1;
+    this.operator = operator;
+    this.arg2 = arg2;
+    this.calculation = function(){
+        let enter = prompt("", "");
+        let calcArr = enter.split(' ')
+        let result
+        if (calcArr[1] == '+')  
+        result = +calcArr[0] + +calcArr[2];
+        if (calcArr[1] == '-')
+        result = +calcArr[0] - +calcArr[2];
+        return result
+      }
+      
+    }
+
+let calc1 = new Calculator(1, '+', 2)
+console.log(calc1)
+console.log(calc1.calculation());
+//console.log(calc1.calculation);
+  </script>
+
+<script>
+/*
+
+  let str = prompt('выражение через пробелы', '');
+
+function Calculator(){
+  this.methods: {
+    '+': (a, b) => a + b,
+    '-': (a, b) => a - b,
+  }
+
+  
+}
+
+let calc1 = new Calculator()
+
+console.log(calc1.calculation());
+//console.log(calc1.calculation);
+</script>
+<script>/*
+  let user = {
+name: "John",
+age: 30,
+}
+console.log(user['name']);
+</script>
+</html>

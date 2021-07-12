@@ -1,0 +1,55 @@
+<!DOCTYPE html >
+<html>
+<head>
+</head>
+<body>
+</body>
+<script>
+/* 
+function unique(arr) {
+return new Set(arr) 
+}
+
+let values = ["Hare", "Krishna", "Hare", "Krishna",
+"Krishna", "Krishna", "Hare", "Hare", ":-O"
+];
+console.log( unique(values) ); // Hare, Krishna, :-O
+ */
+</script>
+<script>
+
+let arr = ["nap", "teachers", "cheaters", "PAN", "ear", "era", "hectares"];
+
+function aclean( arr ) {
+    let map = new Map();
+  
+  let i = 0
+  for (let word of arr) {
+    let sorted = word.toLowerCase().split("").sort().join("");
+    map.set(sorted, word);
+    console.log(map);
+    }
+return Array.from(map.values())
+}
+
+aclean( arr ) 
+
+
+console.log( aclean(arr) ); // "nap,teachers,ear" or "PAN,cheaters,era"
+
+</script>
+
+<script>
+/* 
+    let arr = ["nap", "teachers", "cheaters", "PAN", "ear", "era", "hectares"];
+    
+    function aclean( arr ) {
+      console.log( arr );
+    }
+    
+    aclean(arr) */
+    
+    //console.log( aclean(arr) ); // "nap,teachers,ear" or "PAN,cheaters,era"
+    
+    </script>
+</html>

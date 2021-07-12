@@ -1,0 +1,92 @@
+<!DOCTYPE html >
+<html>
+<head>
+</head>
+<body>
+</body>
+<script>/*
+    let user = {
+    name : "John",
+    }
+
+    user.surname = "Smith";
+    user.name = "Pete";
+        delete user.name
+alert( user["name"] ); 
+</script>
+<script>/*
+    function isEmpty(obj){
+        alert ( user.noSuchProperty === undefined );
+    }
+    obj = {}
+    obj2 = {
+        name : "Jonny",
+        age : 500,
+    }
+    isEmpty(obj);
+</script>
+<script>/* hello object
+    let user = {};
+    user.name = "John";
+    user.suname = "Smith";
+    user.name = "Pete";
+    alert(user.name)
+    delete user.name
+    alert("name" in user);
+</script>
+<script>//проверка на пустоту
+//Напишите функцию isEmpty(obj) , которая возвращает true , если у объекта нет
+//свойств, иначе false .
+/*
+obj = prompt( "проверка функции на пустоту", "schedule" );
+
+function isEmpty(obj) {
+    for ( let key in obj){
+        return false
+    }
+    return true;
+};
+
+let schedule = {};
+alert( isEmpty(schedule) ); // true
+schedule["8:30"] = "get up";
+alert( isEmpty(schedule) ); // false
+
+</script>
+<script>
+//obj = prompt("группа сотрудников", "salaries");
+
+    let salaries = {
+John: 100,
+Ann: 160,
+Pete: 130,
+}
+    
+    let newStaff = { Lia: 300, Anatoliy: 41,}
+
+Object.assign( salaries, newStaff)
+//let nomatterobj = { Lia: 300, Anatoliy: 41,}
+//salaries = mounthCash(obj)
+
+
+//object.assign(salaries, nomatterobj)
+let sum = 0
+
+function isEmpty(salaries){
+    for (let key in salaries) return false
+    return true
+}
+
+if (!(isEmpty(salaries))){
+    for (let key in salaries) {
+//    alert( salaries[key] );
+    sum += salaries[key];
+    }
+}    
+else alert( "вы ничего не заработали", "" )
+
+
+if (sum > 0) alert( "сумма = " + sum )
+
+</script>
+</html>

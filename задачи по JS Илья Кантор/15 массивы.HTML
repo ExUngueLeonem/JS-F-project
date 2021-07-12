@@ -1,0 +1,49 @@
+<!DOCTYPE html >
+<html>
+<head>
+</head>
+<body>
+</body>
+<script>/*
+
+let styles = ['Джаз', 'Блюз'];
+styles.push('Рок н ролл');
+console.log(styles);
+
+
+//let key = Math.floor(styles.length / 2)
+//console.log(key)
+styles[Math.floor(styles.length / 2)] = 'Классика';
+console.log(styles);
+styles.shift();
+
+console.log(styles);
+styles.unshift('реп', 'регги');
+console.log(styles);
+</script>
+<script>
+    let arr = [];
+    let arrSum = 0;
+
+    function sumInput(){
+        let arrNum = prompt('введите числовое значение', '');
+        
+    if ( (arrNum) == null) { 
+      for ( let i = 0; i < arr.length; i++ ) {
+      arrSum += arr[i];
+      }
+    return arrSum
+    }
+    //if ( Number(arrNum) == NaN ) return
+        arr.push(arrNum);
+    sumInput()
+    };
+sumInput()
+console.log(arr)
+consple.log(sumInput())
+console.log(`сумма элементов ${arrSum}`)
+
+</script>
+<script>
+</script>
+</html>

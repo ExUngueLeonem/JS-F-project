@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+</body>
+<script>/*
+function checkAge(age) {
+    if (age > 18) {
+    return true;
+    } else {
+    return confirm('А родители разрешили?');
+    }
+    }
+let age = prompt('Сколько вам лет?', 18);
+if ( checkAge(age) ) {
+alert( 'Доступ получен' );
+} else {
+alert( 'Доступ закрыт' );
+}
+</script>
+<script>/*
+checkAge(12)
+function checkAge(age) 
+{
+    return (age > 18) || confirm('Родители разрешили?') || prompt("ебабо", "");
+}
+</script>
+<script>/*
+   
+
+checkAge(21)
+function checkAge(age) 
+    { 
+        return (age > 18) ? true : confirm('Родители разрешили?');
+    }
+
+</script>
+<script>/*
+
+checkAge(21)
+    function checkAge(age) {
+if (age > 18) {
+return true;
+} else {
+return confirm('Родители разрешили?');
+}
+}
+</script>
+<script>/*
+    
+    function  min( a, b ) 
+    {
+    if ( a < b ) return a;
+    return b   
+    }
+    alert( min ( 5, 8 ))
+</script>
+<script>/*
+        
+        function  min( a, b ) 
+    {
+     return ( a < b ) ? a : b; 
+    }
+    alert( min ( 10, 8 ))
+
+</script>
+<script>/*
+function ask(question, yes, no) {
+if (confirm(question)) yes()
+else no();
+}
+ask(
+"Вы согласны?",
+function() { alert("Вы согласились."); },
+function() { alert("Вы отменили выполнение."); }
+);
+
+</script>
+<script> //заменить function expression стрелочной функцией
+
+ask = (question, yes, no) => {
+    if (confirm(question)) yes()
+    else no();
+    }
+    ask(
+    "Вы согласны?",
+    () => { alert("Вы согласились."); },
+    () => { alert("Вы отменили выполнение."); }
+    );
+
+</script>
+</html>

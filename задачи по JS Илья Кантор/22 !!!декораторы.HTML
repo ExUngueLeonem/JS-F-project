@@ -1,0 +1,51 @@
+<!DOCTYPE html >
+<html>
+<head>
+</head>
+<body>
+</body>
+<script>
+'use strict';
+ 
+function f(x) {
+  console.log(x);
+}
+
+function g(y) {
+  console.log(`${y}  yopta blya` );
+}
+
+
+function delay(f, ms) {
+  return function(...args) {
+    let savedThis = this;
+    setTimeout( function() {
+      
+      console.log(args);
+      f.apply(savedThis, args)
+    }, ms);
+  }
+}
+
+//console.log( delay(f, 1000)(5))
+// создаём обёртки
+ 
+let f1000 = delay(f, 1000);
+let f1500 = delay(f, 1500);
+ 
+f1000("test"); // показывает "test" после 1000 мс
+f1500("test2"); // показывает "test" после 1500 мс
+ delay(f, 2000)("last stand")
+/* 
+function delay(f, ms) {
+  return function() {
+    setTimeout(() => f.apply(this, arguments), ms);
+  };
+}
+
+let f1000 = delay(alert, 1000);
+f1000("test"); // показывает "test" после 1000 мс
+ */
+
+</script>
+</html>
