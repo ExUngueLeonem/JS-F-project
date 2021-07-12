@@ -356,7 +356,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .stat__count {
     margin-bottom: 10px;
-    
+
     font-size: 72px;
     font-weight: 700;
     line-height: 1;
@@ -366,11 +366,23 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 14px;
     color: #fff;
     text-transform: uppercase;
+    
 }
 
+/* Service */
 
+.service {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    
+}
 
-
+.service__inner {
+    width: 350px;
+    height: 130px;
+    border: 1px solid #333;
+}
 
 
 
