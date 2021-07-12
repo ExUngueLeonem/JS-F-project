@@ -238,6 +238,14 @@ hr {
     padding: 80px 0;
 }
 
+.section--devices {
+    padding-bottom: 0;
+
+    background: url("../assets/design/background_forest.jpg")
+    center no-repeat;
+    background-size: cover;
+}
+
 .section__header {
     width: 100%;
     max-width: 950px;
@@ -412,7 +420,25 @@ hr {
     color: #999999;
 }
 
+/* devices */
+.devices {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    position: relative;
 
+}
+
+.devices__item {
+    display: block;
+}
+
+.devices__item--iphone {
+    position: absolute;
+    bottom: -60px;
+    right: 0;
+    z-index: 1;
+}
 
 
 /* 
