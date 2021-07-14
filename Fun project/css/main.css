@@ -12,6 +12,10 @@ body {
 * {
     box-sizing: border-box;
 }
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+}
 /* 
 .fullcontent {
     width: 1100px;
@@ -26,7 +30,7 @@ body {
     background-color: rgba(253, 253, 253, 0.897);
 } */
 
-main, header{
+main, header, footer {
     width: 1100px;
     margin: 20px auto;
     padding: 15px;
@@ -38,7 +42,13 @@ h1 {
 }
 
 p {
+    margin: 0;
+
     text-indent: 30px;
+}
+
+em {
+    font-size: 20px;
 }
 
 table {
@@ -80,4 +90,13 @@ tr:hover {
 
 .mail {
     font-size: 10px;
+}
+
+.footer {
+    background-color: rgb(185, 200, 250);
+}
+
+.a_collection {
+    margin-top: 15px;
+    font-size: 15px;
 }
