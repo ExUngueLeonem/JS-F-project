@@ -293,45 +293,48 @@ p {
     color: #999;
 }
 
-/* About */
-.about {
+/* card */
+.card {
     margin-top: 80px;
     display: flex;
     justify-content: space-between;
 
 }
 
-.about__item {
+.card__item {
     width: 380px;
-    position: relative;
-
-    background-color: #95e1d3;
+    
 }
 
-.about__item:hover .about__image {
+.card__inner:hover .card__image {
     transform: translate3d(-10px, -10px, 0);
 }
 
 
-.about__item:hover .about__image img {
+.card__inner:hover .card__image img {
     opacity: 0.1;
 }
 
-.about__item:hover .about__text {
+.card__inner:hover .card__text {
     opacity: 1;
 }
 
-.about__image {
+.card__inner {
+    position: relative;
+    background-color: #95e1d3;
+}
+
+.card__image {
     background: linear-gradient(to bottom, #f38181, #fce38a);
     transition: transform .1s linear;
 }
 
-.about__image img {
+.card__image img {
     display: block;
     transition: opacity .1s linear;
 }
 
-.about__text {
+.card__text {
     width: 100%;
 
     font-size: 18px;
@@ -351,6 +354,27 @@ p {
 
 }
 
+.card__info {
+    margin-top: 25px;
+
+    text-align: center;
+}
+
+.card__name {
+    font-size: 14px;
+    color: #333;
+    text-transform: uppercase;
+
+}
+
+.card__prof {
+    font-family: 'Roboto', sans-serif;
+    font-style: italic;
+    font-size: 15px;
+    font-weight: 300;
+    color: #999;
+
+}
 /* Statistics */
 
 .statistics {
@@ -618,12 +642,52 @@ border-right: 2px solid #ccc;
 
 }
 
+/* social */
+
+.social {
+    display: flex;
+    justify-content: center;
+}
+
+.social__item {
+    display: block;
+    width: 56px;
+    height: 56px;
+    padding-top: 6px;
+
+    border-right: 1px solid #f38181;
+    background-color: #fce38a;
+    color: #f38181;
+    
+    font-size: 30px;
+    text-decoration: none;
+    text-align: center;
+
+    transition: background .1s linear, color .1s linear ;
+}
+
+.social__item:last-child {
+    border-right: none;
+}
+
+.social__item:hover {
+    color: #fff;
+    background-color: #f38181;
+    margin-top: auto;
+}
+
+/* logos */
 
 
+.logos {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
-
-
-
+.logos__item img {
+    width: 110px;
+}
 
 
 
