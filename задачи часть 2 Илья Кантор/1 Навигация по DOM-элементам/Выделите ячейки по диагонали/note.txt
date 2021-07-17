@@ -1,0 +1,11 @@
+
+
+    for (let elem of table.children[0].children) {
+      console.log(elem[1]);
+
+      
+      //console.log(table.children[0].children[0]);
+
+      //td.style.backgroundColor = 'red';
+    }
+
