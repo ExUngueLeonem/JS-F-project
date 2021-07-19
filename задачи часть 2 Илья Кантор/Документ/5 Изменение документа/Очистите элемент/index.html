@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Lesson</title>
+</head>
+<ol id="elem">
+    <li>Привет</li>
+    <li>Мир123</li>
+    <li>Привет223</li>
+    <li>Мир123</li>
+    <li>Привет423</li>
+    <li>Мир123</li>
+    <li>Приве234т</li>
+    <li>Миsdfsр</li>
+    <li>Пр ивет</li>
+    <li>Миsdfр</li>
+    
+  </ol>
+  
+  <script>
+
+    function clear(elem) {
+
+        //console.log(document.querySelector(elemId));
+        let element = document.getElementById(elem);
+        while(elem.hasChildNodes()){
+        //console.log(elem.hasChildNodes());
+        elem.firstChild.remove()
+        } 
+    }
+
+    clear(elem); // очищает список
+
+  </script>
+</html>
