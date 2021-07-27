@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <style>
+    table {
+      border-collapse: collapse;
+    }
+
+    td,
+    th {
+      border: 1px solid black;
+      padding: 3px;
+      text-align: center;
+    }
+
+    th {
+      font-weight: bold;
+      background-color: #E6E6E6;
+    }
+  </style>
+</head>
+
+<body>
+
+
+  <div id="calendar"></div>
+
+  <script>
+
+document.getElementById('calendar').innerHTML = '<table></table>'
+document.querySelector('table').innerHTML = "<tr><th>Пн</th><th>Вт</th><th>Ср</th><th>Чт</th><th>Пт</th><th>Сб</th><th>Вс</th></tr>";
+//как создать n пустых ячеек? n связан с днем недели d.getDay()
+//допущение
+//let n = d.getDay() //не равен
+let td = '<td></td>'
+console.log( 
+  document.getElementById('calendar').querySelector('table').querySelector('tbody').append(td));
+
+/* for ( let i = 0; i < n; i++) {
+ 
+} */
+ 
+
+  </script>
+
+
+
+</body>
+</html>
