@@ -1,0 +1,30 @@
+a {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+}
+
+.hide {
+    display: none
+}
+
+#sweet__title {
+    font-weight: normal;
+}
+
+#sweet__title::before {
+    content: '▼';
+    color: rgb(6, 141, 1);
+}
+
+#sweet__title.off::before {
+    content: '▶';
+    color: rgb(6, 141, 1);
+}
+/* 
+ul#sweet__title.hide #sweet__title::before {
+    content: '▶';▼
+    color: rgb(6, 141, 1);
+}
+ */
+
+/*       <span id="rightArrow" class="hide">▶</span><span id="downArrow" class="show">▼</span>  */

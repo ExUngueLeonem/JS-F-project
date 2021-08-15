@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div id="slider" class="slider">
+    <div class="thumb"></div>
+  </div>
+
+  <script>
+    document.addEventListener('mousedown', grabThumb);
+
+    function grabThumb(event) {
+      if (event.target.className != 'thumb') return
+
+      let thumb = event.target;
+      let posX = event.pageX - thumb.offsetWidth/2 + 'px';
+
+      document.addEventListener('mousemove', onMouseMove)
+      
+      function onMouseMove(event) {
+        let posX = event.pageX - thumb.offsetWidth/2 - slider.getBoundingClientRect().x;
+        moveAt(posX)
+      }
+
+      moveAt(posX);
+
+      function moveAt(pageX) {
+        if (pageX < 10) { 
+          thumb.style.left = 10 + 'px' 
+        } else if (pageX > slider.offsetWidth - 20) { 
+          thumb.style.left = slider.offsetWidth - 20 + 'px'; 
+        } else {
+          thumb.style.left = pageX + 'px';
+        }
+        
+      }
+
+      document.addEventListener('mouseup', ungrabThumb) 
+      
+      function ungrabThumb(event){
+        document.removeEventListener('mousemove', onMouseMove)
+      }
+    }
+  </script>
+
+</body>
+</html>

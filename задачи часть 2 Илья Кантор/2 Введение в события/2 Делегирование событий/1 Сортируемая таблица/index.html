@@ -1,0 +1,151 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <style>
+    table {
+       border-collapse: collapse;
+     }
+     th, td {
+       border: 1px solid black;
+       padding: 4px;
+     }
+     th {
+       cursor: pointer;
+     }
+     th:hover {
+       background: yellow;
+     }
+  </style>
+</head>
+
+<body>
+
+  <table id="grid">
+    <thead>
+      <tr>
+        <th data-type="number">Возраст</th>
+        <th data-type="string">Имя</th>
+        <th data-type="number">Жопа</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>5</td>
+        <td>Вася</td>
+        <td>45</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>Петя</td>
+        <td>68</td>
+      </tr>
+      <tr>
+        <td>12</td>
+        <td>Женя</td>
+        <td>46</td>
+      </tr>
+      <tr>
+        <td>9</td>
+        <td>Маша</td>
+        <td>71</td>
+      </tr>
+      <tr>
+        <td>6</td>
+        <td>Паша</td>
+        <td>67</td>
+      </tr>
+      <tr>
+        <td>61</td>
+        <td>Артем</td>
+        <td>44</td>
+      </tr>
+      <tr>
+        <td>64</td>
+        <td>Коля</td>
+        <td>35</td>
+      </tr>
+      <tr>
+        <td>92</td>
+        <td>Яша</td>
+        <td>89</td>
+      </tr>
+      <tr>
+        <td>74</td>
+        <td>Слава</td>
+        <td>75</td>
+      </tr>
+      <tr>
+        <td>18</td>
+        <td>Илья</td>
+        <td>45</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <script>
+    document.addEventListener('click', sortTable);
+
+    let table = document.getElementById('grid');
+    let tbody = table.querySelector('tbody');
+    //let thead = table.querySelector('thead');
+
+
+    function sortTable(event) {
+
+      if( !(event.target.dataset.type == 'string' || event.target.dataset.type == 'number') ) return
+
+      let sortPos = event.target.cellIndex;
+
+      let tableArr = [];
+      
+      for (i = 0; i < tbody.rows.length; i++) {
+        let cellValue = tbody.rows[i].cells[sortPos].innerHTML;
+        tableArr.push(cellValue)
+      }
+
+      if (event.target.dataset.type == 'string') tableArr.sort();
+      if (event.target.dataset.type == 'number') { tableArr.sort((a, b) => a - b ) };
+
+      
+      for (let n = 0; n < tableArr.length; n++){
+//перебираем таблицу, если td совпадает с значением в массиве, ставим в конец таблицы 
+        for (i = 0; i < tbody.rows.length; i++) {
+          let cellValue = tbody.rows[i].cells[sortPos].innerHTML;
+          if (cellValue == tableArr[n]) tbody.append(tbody.rows[i])
+        } 
+      }
+
+    };
+
+    
+    
+
+
+    //console.log(table);
+
+
+    //console.log(tbody.rows[0]); 
+    //console.log(thead.rows); 
+
+    //console.log(table.rows[2].cells[0]); //5
+    //console.log(table.rows[1].cells[1]); //Вася
+/* 
+    var mass = [
+["Вася", "Петров", "Александрович", "10"],
+["Петя", "Иванов", "Петрович", "15"],
+["Владимир", "Ленин", "Ильич", "9"] ]
+
+mass.sort((a, b) => +a[3] - b[3]);
+
+function compare(a, b){
+  return +a[a.length-1] - b[b.length-1]
+}
+
+console.log(mass);
+ */
+  </script>
+
+</body>
+</html>

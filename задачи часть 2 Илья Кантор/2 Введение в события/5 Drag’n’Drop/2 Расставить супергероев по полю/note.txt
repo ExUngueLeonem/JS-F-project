@@ -1,0 +1,216 @@
+Расставить супергероев по полю
+важность: 5
+В этой задаче вы можете проверить своё понимание сразу нескольких аспектов Drag’n’Drop и DOM.
+
+Сделайте так, чтобы элементы с классом draggable можно было переносить мышкой. Как мяч в этой главе.
+
+Требования к реализации:
+
+Используйте делегирование событий для отслеживания начала перетаскивания: только один обработчик событий mousedown на документе.
+Если элементы подносят к верхней/нижней границе окна – оно должно прокручиваться вверх/вниз, чтобы позволить дальнейшее перетаскивание.
+Горизонтальная прокрутка отсутствует (чуть-чуть упрощает задачу, её просто добавить).
+Элемент при переносе, даже при резких движениях мышкой, не должен даже частично попасть вне окна.
+Демо слишком велико для размещения здесь, перейдите по ссылке ниже.
+
+
+
+
+
+
+
+
+
+document.addEventListener('mousedown', heroSoccer);
+
+function heroSoccer(event){
+    if (!event.target.classList.contains('draggable')) return
+
+    let hero = event.target;
+
+    let shiftX = event.pageX - hero.getBoundingClientRect().x;
+    let shiftY = event.pageY - hero.getBoundingClientRect().y;
+
+    let maxX = document.documentElement.clientWidth - hero.clientWidth;
+    let maxY = document.documentElement.clientHeight - hero.clientHeight;
+
+    //hero.style.position = 'fixed';
+    hero.style.position = 'absolute';
+
+
+    hero.style.zIndex = 1000;
+
+    //вывести сюда переменную проверки размера окна
+
+console.log(hero.clientWidth);
+
+    moveAt(event);
+
+    function moveAt(event) {
+
+        
+
+        hero.style.left = event.pageX - shiftX  +  document.documentElement.scrollLeft + 'px'; // поправить 
+        hero.style.top = event.pageY - shiftY +  document.documentElement.scrollTop +'px';
+
+        if ( hero.getBoundingClientRect().y < 0  )  hero.style.top = 0 +  document.documentElement.scrollTop +'px';
+        if ( hero.getBoundingClientRect().x < 0 )  hero.style.left = 0 +  document.documentElement.scrollLeft +'px';
+        if ( hero.getBoundingClientRect().y > maxY)  hero.style.top = maxY + document.documentElement.scrollTop +'px';
+        if ( hero.getBoundingClientRect().x > maxX )  hero.style.left = maxX + document.documentElement.scrollLeft + 'px';
+
+    }
+
+
+    document.addEventListener('mousemove', moveTheItem)
+
+    function moveTheItem(event) {
+        moveAt(event)
+    }
+
+
+    //document.addEventListener('scroll', moveTheItemOnScroll)
+
+    function moveTheItemOnScroll() {
+        hero.style.position = 'relative';
+
+    }
+
+
+    document.addEventListener('mouseup', stopMoving)
+
+    function stopMoving() {
+        //hero.style.position = 'absolute';
+        //hero.style.left = event.pageX - shiftX  +  document.documentElement.scrollLeft + 'px'; // поправить 
+        //h1ero.style.top = event.pageY - shiftY +  document.documentElement.scrollTop +'px';
+        document.removeEventListener('mousemove', moveTheItem)
+    }
+
+
+
+    /* 
+    event.target.ondragstart = function() {
+        console.log('ondragstart dropped');
+        return false
+    }
+   
+         */
+
+
+    event.preventDefault();
+}
+
+
+
+/* 
+выход за пределы полей справа и снизу
+бага при крокрутке колеса
+
+
+организовать прокрутку мышью
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+document.addEventListener('mousedown', heroSoccer);
+
+function heroSoccer(event){
+    if (!event.target.classList.contains('draggable')) return
+
+    let hero = event.target;
+    
+    let shiftX = event.clientX - hero.getBoundingClientRect().x;
+    let shiftY = event.clientY - hero.getBoundingClientRect().y;
+    
+    hero.style.position = 'fixed';
+    
+    let maxX = document.documentElement.clientWidth - hero.clientWidth;
+    let maxY = document.documentElement.clientHeight - hero.clientHeight;
+
+    hero.style.zIndex = 1000;
+
+    //вывести сюда переменную проверки размера окна
+
+console.log(event.clientX);
+
+    moveAt(event);
+
+    function moveAt(event) {
+    
+        
+
+        hero.style.left = event.pageX - shiftX -  document.documentElement.scrollLeft + 'px'; // поправить 
+        hero.style.top = event.pageY - shiftY - document.documentElement.scrollTop + 'px';
+
+        if ( hero.getBoundingClientRect().y < 0  )  hero.style.top = 0 +'px';
+        if ( hero.getBoundingClientRect().x < 0 )  hero.style.left = 0 +'px';
+        if ( hero.getBoundingClientRect().y > maxY)  hero.style.top = maxY +'px';
+        if ( hero.getBoundingClientRect().x > maxX )  hero.style.left = maxX + 'px';
+
+        console.log(event.pageX);
+
+    }
+
+
+    document.addEventListener('mousemove', moveTheItem)
+
+    function moveTheItem(event) {
+        moveAt(event)
+    }
+
+
+    document.addEventListener('mouseup', stopMoving)
+
+    function stopMoving(event) {
+        hero.style.position = 'absolute';
+        
+        hero.style.left = event.pageX - shiftX  + 'px'; // поправить 
+        hero.style.top = event.pageY - shiftY +'px';
+
+
+        document.removeEventListener('mousemove', moveTheItem)
+        document.removeEventListener('mouseup', stopMoving)
+
+    }
+
+
+
+    /* 
+    event.target.ondragstart = function() {
+        console.log('ondragstart dropped');
+        return false
+    }
+   
+         */
+
+
+    event.preventDefault();
+}
+
+
+
+/* 
+выход за пределы полей справа и снизу
+бага при крокрутке колеса
+
+
+организовать прокрутку мышью
+*/
+
