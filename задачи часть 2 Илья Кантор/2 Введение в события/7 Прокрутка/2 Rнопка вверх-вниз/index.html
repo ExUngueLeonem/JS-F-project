@@ -1,0 +1,79 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <style>
+    body,
+    html {
+      height: 100%;
+      width: 100%;
+      padding: 0;
+      margin: 0;
+    }
+
+    #matrix {
+      width: 400px;
+      margin: auto;
+      overflow: auto;
+      text-align: justify;
+    }
+
+    #arrowTop {
+      height: 9px;
+      width: 14px;
+      color: green;
+      position: fixed;
+      top: 10px;
+      left: 10px;
+      cursor: pointer;
+    }
+
+    #arrowTop::before {
+      content: '▲';
+    }
+
+  </style>
+  <meta charset="utf-8">
+</head>
+
+<body>
+
+  <div id="matrix">
+    <script>
+      for (let i = 0; i < 2000; i++) document.writeln(i)
+    </script>
+  </div>
+
+  <div id="arrowTop"></div>
+
+  <script>
+  document.addEventListener('click', btnScrollTop)
+  
+  function btnScrollTop(event) {
+    if(event.target.id == 'arrowTop') {
+      document.documentElement.scroll(pageXOffset, 0)
+    }
+  }
+
+  document.addEventListener('scroll', hideTheScrollTopBtn)
+
+  let windBottom = document.documentElement.getBoundingClientRect().bottom
+
+  function hideTheScrollTopBtn(event) {
+    let arrowTop = document.getElementById('arrowTop')
+    if (document.documentElement.getBoundingClientRect().bottom < 0) {
+      arrowTop.hidden = false
+    } else {
+      arrowTop.hidden = true
+    }
+  }
+
+  hideTheScrollTopBtn(event)
+
+
+
+
+    // ... ваш код ...
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,69 @@
+let table = document.getElementById('bagua-table');
+
+document.addEventListener('click', focusInTd)
+
+let tdData
+let canIClickTd = true
+let td
+let textarea
+let editableWrapper
+
+function focusInTd(event) {
+    //console.log(event.target, canIClickTd);
+  if (!event.target.closest('#bagua-table') || event.target.closest('th')) return
+  if (canIClickTd != true) return
+  //if (!td.clientWidth) return
+
+  canIClickTd = false
+  td = event.target.closest('td');
+  textarea = document.createElement('textarea')
+  
+  editableWrapper = document.createElement('div')
+  editableWrapper.style.width = td.clientWidth + 'px'
+  editableWrapper.style.height = td.clientHeight -2 + 'px'
+  textarea.style.height = td.clientHeight + 'px'
+  editableWrapper.style.left = td.getBoundingClientRect().x + 'px'
+  editableWrapper.style.top = td.getBoundingClientRect().y + 'px'
+  editableWrapper.style.position = 'fixed'
+  editableWrapper.style.zIndex = 1000
+  textarea.className = 'td__textarea'
+  tdData = event.target.closest('td').innerHTML
+  editableWrapper.className = 'editableWrapper'
+  table.prepend(editableWrapper)
+  editableWrapper.prepend(textarea)
+
+  editableWrapper.insertAdjacentHTML("beforeEnd",
+    '<div class="edit-controls"><button class="edit-ok">OK</button><button class="edit-cancel">CANCEL</button></div>'
+  );
+
+  textarea.value = tdData  
+  textarea.focus()
+
+}
+
+document.addEventListener('click', okButton)
+
+function okButton(event) {
+  if(event.target.className != 'edit-ok') return
+
+  console.log(event.target, canIClickTd);
+
+
+  td.innerHTML = textarea.value
+  editableWrapper.remove()
+  canIClickTd = true
+}
+
+document.addEventListener('click', cancelButton)
+
+function cancelButton(event) {
+    if(event.target.className != 'edit-cancel') return
+
+    console.log(event.target, canIClickTd);
+
+
+    td.innerHTML = tdData
+    editableWrapper.remove()
+    canIClickTd = true
+}
+/* ваш код */ 

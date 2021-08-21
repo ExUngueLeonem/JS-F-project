@@ -1,15 +1,32 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html>
-
 <head>
   <meta charset="utf-8">
 </head>
 
 <body>
 
-  <div id="text">Нажмите "Q" и "W" вместе (язык значения не играет).</div>
+<h1>Прокрути меня</h1>
 
-<script src="script.js"></script>
+<script>
+
+ document.addEventListener('scroll', addDate)
+
+ let count = 0
+ 
+ addDate()
+
+ function addDate(event) {
+  while(true) {      
+      if (document.body.lastElementChild.getBoundingClientRect().y > document.documentElement.clientHeight) { return }
+        let pDate = document.createElement('div')
+        pDate.innerHTML = new Date()
+        document.body.append(pDate)
+        console.log(++count);
+  }
+}
+
+</script>
 
 </body>
 </html>
