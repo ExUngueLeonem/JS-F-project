@@ -34,7 +34,61 @@
 
 
   <script>
-    // ...ваш код...
+    let mouse = document.getElementById('mouse')
+    mouse.tabIndex = 0
+
+    document.addEventListener('focusin', mouseMove)
+
+    function mouseMove(event) {
+      if (event.target.id != 'mouse') return
+      event.preventDefault()
+      let mouseRect = event.target.getBoundingClientRect()
+      console.log(mouse.offsetTop);
+
+      mouse.style.position = 'absolute';
+      mouse.style.display = 'block';
+      mouse.style.top = mouse.offsetTop + 'px';
+      mouse.style.left = mouse.offsetLeft + 'px';
+
+
+
+      if (event.key == 'ArrowRight') {
+        mouse.style.left = mouse.offsetLeft + mouseRect.width + 'px'
+      }
+      
+      if (event.key == 'ArrowLeft') {
+        mouse.style.left = mouse.offsetLeft - mouseRect.width + 'px'
+      }
+
+      if (event.key == 'ArrowUp') {
+        mouse.style.top = mouse.offsetTop - mouseRect.height + 'px'
+      }
+
+      if (event.key == 'ArrowDown') {
+        mouse.style.top = mouse.offsetTop + mouseRect.height + 'px'
+      }
+
+
+
+
+    }
+
+    document.addEventListener('keydown', mouseMove)
+
+
+    
+    /*
+    1 евент листенер на кнопки
+    2 получить элемент под фокусом
+    3 если это мышь
+    4 сменить позицию по нажатию на кнопку
+
+
+    5 отменить мигающий курсор
+
+    */
+
+
   </script>
 
 </body>

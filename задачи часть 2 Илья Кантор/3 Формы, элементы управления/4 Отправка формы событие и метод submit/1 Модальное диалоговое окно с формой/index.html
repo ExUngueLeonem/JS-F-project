@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body style="height:3000px">
+
+  <h2>Кликните на кнопку ниже</h2>
+
+  <input type="button" value="Кликните, чтобы увидеть форму" id="show-button">
+
+
+  <div id="prompt-form-container">
+    <form id="prompt-form">
+      <div id="prompt-message"></div>
+      <input name="text" type="text">
+      <input type="submit" value="Ok">
+      <input type="button" name="cancel" value="Отмена">
+    </form>
+  </div>
+
+  <script>
+    let form = document.getElementById('prompt-form')
+    let backgroundDiv = document.createElement('div')
+  
+    
+    function showForm(event) {
+      console.log(event.target);
+      if (event.target != document.getElementById('showForm')) return
+  
+      let IsHideForm = document.querySelector('#prompt-form-container').hidden
+  
+      if (IsHideForm == true) {
+        document.querySelector('#prompt-form-container').hidden = false; 
+        // form.text.focus()
+        backDiv(true)
+        //form.text.tabIndex = 0
+      } else {
+        document.querySelector('#prompt-form-container').hidden = true;
+        backDiv(false)
+        document.removeEventListener('keydown', loopTabInForm);
+      }
+  
+      
+  
+    }
+    
+  
+  
+    document.addEventListener('keydown', loopTabInForm)
+      
+      //let firstElemForm = form.
+      //let lastElemForm = form.cancel
+  
+      function loopTabInForm(event) {
+        console.log(event.key);
+        if (event.key == 'Tab' && event.target == form.cancel) {
+          form.elements.text.focus();
+          console.log(form.elements[0]);
+        }
+  
+        if (event.key == 'Tab' && event.target == form.cancel && event.shiftKey) {
+          form.elements[2].focus()
+          console.log('shift KEY');
+        }
+        
+      }
+  
+  
+  
+    function hideForm(event) {
+      if (event.target == form.cancel) {
+      document.querySelector('#prompt-form-container').hidden = true;
+      backDiv(false)
+      }
+    }
+    
+    function backDiv(show) {
+      if (show == true) {
+        console.log('backgroundDiv SHOW');
+        
+        backgroundDiv.style.cssText = 'background-color: grey; opacity: 0.3; width: 100%; height: 100%; display: block';
+        document.getElementById('prompt-form-container').before(backgroundDiv)
+        //form.append(backgroundDiv)
+      } else {
+        console.log('backgroundDiv HIDE');
+        backgroundDiv.remove()
+  
+      }
+      
+    }
+    
+    document.addEventListener('click', showForm)
+    document.addEventListener('click', hideForm)
+  
+    
+  
+  
+  /* 
+  
+  showPrompt("Введите что-нибудь<br>...умное", function(value) {
+    alert(value);
+  });
+  
+  showPrompt(html, callback)
+  выводит форму с сообщением (html)
+  
+  ввести что-то в текстовое поле и нажать Enter или кнопку «OK»,
+  после чего должна вызываться функция callback(value) со значением поля
+  
+  Если пользователь нажимает Esc или кнопку «ОТМЕНА», тогда вызывается callback(null).
+  
+  
+  завершить процесс ввода и закрыть диалоговое окно с формой.
+  
+  
+  
+  в центре окна.
+  никакое взаимодействие с остальной частью страницы невозможно
+  формы, фокус должен находиться сразу внутри <input>.
+  Tab/Shift+Tab должны переключать фокус между полями формы, не позволяя ему переходить к другим элементам страницы.
+  
+   */
+  </script>
+
+
+</body>
+</html>

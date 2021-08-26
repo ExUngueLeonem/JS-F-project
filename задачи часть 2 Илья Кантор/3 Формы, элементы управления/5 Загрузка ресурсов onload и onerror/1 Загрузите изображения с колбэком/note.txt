@@ -1,0 +1,40 @@
+let form = document.getElementById('prompt-form')
+
+document.addEventListener('click', showForm)
+document.addEventListener('submit', subForm)
+document.addEventListener('focusout', focusOnForm)
+
+function showForm(event) {
+  console.log(event.target);
+  if (event.target != document.getElementById('showForm')) return
+  let IsHideForm = document.querySelector('#prompt-form-container').hidden
+  if (IsHideForm == true) {
+    document.querySelector('#prompt-form-container').hidden = false; 
+    form.text.focus()
+    //form.text.tabIndex = 0
+  } else {
+    document.querySelector('#prompt-form-container').hidden = true;
+  }
+
+}
+
+
+function subForm(event) {
+  alert(form.text.value); 
+  //event.preventDefault()
+  //console.log('submit');
+}
+
+function focusOnForm(event) {
+  if(event.target == form.cancel) {
+    form.text.focus()
+    
+    console.log('Отмена потеряла фокус');
+  }
+
+/*   document.addEventListener('focusin', focusOntext)
+  function focusOntext(event) {
+    form.text.focus()
+    
+  } */
+}
