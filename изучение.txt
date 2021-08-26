@@ -1,0 +1,6 @@
+препроцессоры SASS
+регулярные выражения
+TypeScript
+React
+Redux
+Node.js
