@@ -1,11 +1,16 @@
-const obj = {
-    name: 'John',
-    age: 25,
-    isMarried: true
+let numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
+
+let personalMovieDb = {
+    count: 0,
+    movies: {},
+    actors: {},
+    genres: [],
+    private: false
 };
 
-let arr = ['apple', {name: 'John Konstantine', foo: () => { console.log('labadabudab dab'); return 5} }];
-console.log(typeof(arr[1].foo()));
-console.log(obj.name);
+personalMovieDb.count = numberOfFilms;
 
-console.log( undefined || 2 || true);
+for (let i = 0; i < numberOfFilms; i++) {
+    let film = prompt('Один из последних просмотренных фильмов', '');
+    personalMovieDb.movies[film] = prompt('На сколько оцените его?', '');
+}
