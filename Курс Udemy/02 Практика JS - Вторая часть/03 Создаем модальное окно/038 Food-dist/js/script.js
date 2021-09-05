@@ -100,7 +100,7 @@ tabsParent.addEventListener('click', (event) => {
     // end Timer
 
     // Modal window
- 
+ /* 
     document.addEventListener('click', showModalWindow);
 
 
@@ -128,7 +128,41 @@ tabsParent.addEventListener('click', (event) => {
         }
     }
  
-
+ */
     // end of Modal window
+
+    // modal Udemy
+
+    const modalTrigger = document.querySelector('[data-modal]'),
+          modal = document.querySelector('.modal'),
+          modalCloseBtn = document.querySelector('[data-close]');
+
+          modalTrigger.addEventListener('click', () => {
+              modal.classList.add('show');
+              modal.classList.remove('hide');
+              document.body.style.overflow = 'hidden';
+
+          });
+
+          function closeModal() {
+            modal.classList.add('hide');
+            modal.classList.remove('show');
+            document.body.style.overflow = '';
+          }
+
+          modalCloseBtn.addEventListener('click', closeModal);
+
+        modal.addEventListener('click', (event) => {
+            if (event.target === modal) {
+                closeModal();
+            }
+        });
+
+        document.addEventListener('keydown', (event) => {
+            if (event.code === 'Escape' && modal.classList.contains('show')){
+                closeModal();            
+            }
+        });
+    // end modal Udemy
  
 });
