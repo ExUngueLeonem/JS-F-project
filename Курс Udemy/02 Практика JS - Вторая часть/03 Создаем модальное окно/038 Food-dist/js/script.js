@@ -44,7 +44,7 @@ tabsParent.addEventListener('click', (event) => {
 }); // end Tabs
 
 // Timer
-    const deadLine = '2021-09-06';
+    const deadLine = '2021-12-06';
 
     function getTimeRemaining(endTime) {
         const t = Date.parse(endTime) - Date.parse(new Date()),
@@ -99,37 +99,6 @@ tabsParent.addEventListener('click', (event) => {
 
     // end Timer
 
-    // Modal window
- /* 
-    document.addEventListener('click', showModalWindow);
-
-
-
-    function showModalWindow(event) {
-        event.preventDefault();
-        
-        if (event.target && event.target.dataset.modal == '') {
-            // console.log(event.target);
-            document.querySelector('div.modal').style.display = 'block';
-            document.body.style.overflow = 'hidden';
-            
-
-        }
-        
-    }
-
-    document.addEventListener('click', closeModalWindow);
-
-    function closeModalWindow(event) {
-        if (event.target && event.target.classList.contains('modal__close')) {
-            document.querySelector('div.modal').style.display = '';
-            document.body.style.overflow = '';
-            
-        }
-    }
- 
- */
-    // end of Modal window
 
     // modal Udemy
 
@@ -137,17 +106,20 @@ tabsParent.addEventListener('click', (event) => {
           modal = document.querySelector('.modal'),
           modalCloseBtn = document.querySelector('[data-close]');
 
-          modalTrigger.addEventListener('click', () => {
-              modal.classList.add('show');
-              modal.classList.remove('hide');
-              document.body.style.overflow = 'hidden';
+          modalTrigger.addEventListener('click', openModal);
 
-          });
+          function openModal() {
+            modal.classList.add('show');
+            modal.classList.remove('hide');
+            document.body.style.overflow = 'hidden';
+
+          }
 
           function closeModal() {
             modal.classList.add('hide');
             modal.classList.remove('show');
             document.body.style.overflow = '';
+            clearInterval(timerModalId);
           }
 
           modalCloseBtn.addEventListener('click', closeModal);
@@ -163,6 +135,19 @@ tabsParent.addEventListener('click', (event) => {
                 closeModal();            
             }
         });
+
+        let timerModalId = setTimeout(openModal, 15000);
+
+        document.addEventListener('scroll', openModalOnScroll);
+
+        function openModalOnScroll(event) {
+            console.log(window.pageYOffset + document.documentElement.clientHeight, document.documentElement.scrollHeight);
+
+            if (window.pageYOffset + document.documentElement.clientHeight >= document.documentElement.scrollHeight - 1) {
+                openModal();
+                document.removeEventListener('scroll', openModalOnScroll);
+            }
+        }
     // end modal Udemy
  
 });
