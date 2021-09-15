@@ -1,22 +1,26 @@
 Angular:
-
 - Node js
 - TypeScript
 - Webpack
 - MVC pattern
 - Angular
 
-React:
 
+
+React:
 - Node js
 - JSX
 - Babel (компилирует JSX)
 - Webpack
 - React
 
-Vue.js
 
+
+Vue.js
 - Node js
 - Webpack
 - Vue
 
+====================================
+
+JQuery
