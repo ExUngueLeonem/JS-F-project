@@ -36,3 +36,7 @@ console.log(maleUnder18, maleAdult, femUnder18, femAdult);
 
 const coords = {x, y};
 console.log(coords);
+
+
+
+
