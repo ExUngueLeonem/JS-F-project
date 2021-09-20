@@ -16,7 +16,6 @@ console.log(a, b, c, d);
 
 //================================================================
 
-
 const country = {
     name: 'United States',
     population: 1000024,
@@ -27,12 +26,9 @@ const country = {
 }
 
 const {gender: {male: [maleUnder18, maleAdult], female: [femUnder18, femAdult]}} = country;
-
 console.log(maleUnder18, maleAdult, femUnder18, femAdult);
 
-
 //================================================================
-
 
 const coords = {x, y};
 console.log(coords);
