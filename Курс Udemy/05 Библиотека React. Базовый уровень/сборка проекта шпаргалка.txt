@@ -1,0 +1,35 @@
+	***настроить импорты, экспорты***
+
+	*** установить сборщик***
+npm init
+npm instal webpack webpack-cli --save-dev
+/*webpack - сам пакет вебпака*/
+/*webpack-cli - работа в консоли для ВП*/
+/*если мы не настраиваем ВП вручную, то нам нужно
+соблюдать правила организации файлов и папок*/
+
+	***запуск***
+npx webpack
+
+*** установка babel***
+npm install --save-dev @babel/core @babel/cli @babel/preset-env
+npm install --save @babel/polyfill
+
+создаем файл конфигурации babel
+babel.config.js
+копируем туда настройки бабеля с сайта
+
+	
+ ***	npx babel src --out-dir
+
+
+
+создание React проекта:
+npm i create-react-app -g (сначала установим глобально)
+
+(нельзя использовать в create-react-app внутри других проектов
+тк будет конфликт зависимостей, например с вебпаком)
+
+npx create-react-app my-app
+cd my-app
+npm start
