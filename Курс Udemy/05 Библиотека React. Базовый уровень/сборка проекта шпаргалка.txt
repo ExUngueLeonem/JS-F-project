@@ -19,10 +19,11 @@ npm install --save @babel/polyfill
 babel.config.js
 копируем туда настройки бабеля с сайта
 
-	
  ***	npx babel src --out-dir
 
-
+vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
+=============================================================
+npm init
 
 создание React проекта:
 npm i create-react-app -g (сначала установим глобально)
@@ -30,6 +31,13 @@ npm i create-react-app -g (сначала установим глобально)
 (нельзя использовать в create-react-app внутри других проектов
 тк будет конфликт зависимостей, например с вебпаком)
 
+		       ||
+		       vv - название приоложения
 npx create-react-app my-app
 cd my-app
 npm start
+
+=============================================================
+далее, когда мы все настроили, проект запускается
+cd my-app		переход в директорию приложения
+npm start		запуск приложения
