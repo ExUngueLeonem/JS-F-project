@@ -49,6 +49,13 @@ npm start		запуск приложения
 npm install node-sass --save
 
 теперь мы мажем использовать SASS и scss файлы в нашем проекте
+=============================================================
+BOOTSTRAP (REACTSTRAP)
+
+				 | 4я версия
+				 V
+npm install reactstrap bootstrap@4 --save
+
 
 
 
