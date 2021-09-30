@@ -13,12 +13,12 @@ export default class App extends Component {
         super(props);
         this.state = {
             data : [
-                {label: 'Going to learn React', important: true, id: 1},
-                {label: 'That is so good', important: false, id: 2},
-                {label: 'I need a break', important: false, id: 3},
-                {label: 'I need a bork', important: false, id: 4},
-                {label: 'I need a berk', important: false, id: 5},
-                {label: 'I need a anal sex', important: false, id: 6}
+                {label: 'Going to learn React', important: true, like: false, id: 1},
+                {label: 'That is so good', important: false, like: false, id: 2},
+                {label: 'I need a break', important: false, like: false, id: 3},
+                {label: 'I need a bork', important: false, like: false, id: 4},
+                {label: 'I need a berk', important: false, like: false, id: 5},
+                {label: 'I need a anal sex', important: false, like: false, id: 6}
             ]
         };
 
@@ -62,7 +62,18 @@ export default class App extends Component {
     }
 
     onToggleLiked(id) {
-        console.log('liked', id);
+        this.setState(({data}) => {
+            const index = data.findIndex( elem => elem.id === id);
+
+            const old = data[index];
+            const newItem = {...old, like: !old.like};
+
+            const newArr = [...data.slice(0, index), newItem,...data.slice(index + 1)]
+        
+            return {
+                data: newArr
+            }
+        })
     }
 
     render () {
