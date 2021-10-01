@@ -18,9 +18,10 @@ export default class App extends Component {
                 {label: 'I need a break', important: false, like: false, id: 3},
                 {label: 'I need a bork', important: false, like: false, id: 4},
                 {label: 'I need a berk', important: false, like: false, id: 5},
-                {label: 'I need a anal sex', important: false, like: false, id: 6}
+                {label: 'I need a 300 bucks', important: false, like: false, id: 6}
             ],
-            term: ''
+            term: '',
+            filter: 'all'
         };
 
         this.deleteItem = this.deleteItem.bind(this);
@@ -28,6 +29,7 @@ export default class App extends Component {
         this.onToggleImportant = this.onToggleImportant.bind(this);
         this.onToggleLiked = this.onToggleLiked.bind(this);
         this.onUpdateSearch = this.onUpdateSearch.bind(this);
+        this.onFilterSelect = this.onFilterSelect.bind(this);
 
         this.maxId = 7; 
     }   
@@ -98,17 +100,29 @@ export default class App extends Component {
         })
     }
 
+    filterPost(items, filter){
+        if (filter === 'like') {
+            return items.filter(item => item.like)
+        } else {
+            return items
+        }
+    }
+
     onUpdateSearch(term) {
         this.setState({term})
     }
 
+    onFilterSelect(filter){
+        this.setState({filter})
+    }
+
     render () {
-        const {data, term,} = this.state
+        const {data, term, filter} = this.state;
 
         const liked = data.filter( item => item.like).length;
         const allPosts = data.length;
 
-        const visiblePosts = this.searchPost(data, term);
+        const visiblePosts = this.filterPost(this.searchPost(data, term), filter);
 
         return (
             <div className="app">
@@ -118,7 +132,9 @@ export default class App extends Component {
                 <div className="search-panel d-flex">
                     <SearchPanel
                         onUpdateSearch={this.onUpdateSearch}/>
-                    <PostStatusFilter/>
+                    <PostStatusFilter
+                        onFilterSelect={this.onFilterSelect}
+                        filter={filter}/>
                 </div>
                 <PostList 
                     posts={visiblePosts}
