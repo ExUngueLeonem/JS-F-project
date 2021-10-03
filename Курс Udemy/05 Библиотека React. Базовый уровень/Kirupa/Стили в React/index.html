@@ -12,12 +12,62 @@ development.js"></script>
 babel.min.js"></script>
 <style>
 #container {
-padding: 50px;
-background-color: #FFF;
+    padding: 50px;
+    background-color: #FFF;
 }
+
+.letter {
+    padding: 10px;
+    margin: 10px;
+    background-color: #FFDE00;
+    color: #333;
+    display: inline-block;
+    font-family: monospace;
+    font-size: 32px;
+    text-align: center;
+}
+
 </style>
 </head>
 <body>
 <div id="container"></div>
+<script type="text/babel">
+
+    var destination = document.querySelector("#container");
+
+    class Letter extends React.Component {
+
+        constructor(props) {
+            super(props);
+
+            this.funcClick = this.funcClick.bind(this);
+        }
+
+        funcClick(){
+            console.log(1);
+        }
+
+        render() {
+            return (
+                <div className="letter"
+                onClick={this.funcClick}>
+                    {this.props.children}
+                </div>
+            );
+        }
+    }
+
+
+    ReactDOM.render(
+        <div>
+            <Letter>А</Letter>
+            <Letter>Е</Letter>
+            <Letter>И</Letter>
+            <Letter>О</Letter>
+            <Letter>У</Letter>
+        </div>,
+        destination
+    );
+    </script>
 </body>
 </html>
