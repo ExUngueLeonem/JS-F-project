@@ -29,14 +29,30 @@ fetch(url, {
     .catch(error => console.error('Error', error)); 
 */
 
-const getResource = async (url) => {
-    const res = await fetch(url), 
-          some = await res.json();
+class GotService {
+    async getResource (url) {
+        const res = await fetch(url); 
+    
+        if (!res.ok) {
+            throw new Error(`could not fetch ${url}, status: ${res.status}`)
+        }
+        
+        return await res.json();
+    };
 
-    return some;
+    getAllCharacters() {
+        return this.getResource('https://www.anapioficeandfire.com/api/characters?page=5&pageSize=10');
+    }
+
+    getCharacter(id){
+        return this.getResource(`https://www.anapioficeandfire.com/api/characters/${id}`)
+    }
 }
 
+const got = new GotService();
 
-getResource('https://jsonplaceholder.typicode.com/todos/10000')
-    .then((res) => console.log('Success', res))
-    .catch(error => console.error('Error', error)); 
+got.getAllCharacters()
+   .then(res => console.log(res));
+
+got.getCharacter(130)
+   .then(res => console.log(res));
