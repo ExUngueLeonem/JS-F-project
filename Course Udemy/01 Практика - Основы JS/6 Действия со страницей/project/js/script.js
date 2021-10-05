@@ -48,16 +48,6 @@ movieDB.movies.forEach( (film, i) => {
     console.log(i);
 });
 
-
-/* 
-for (let i = 0; i < filmList.length; i++) {
-    filmList[i].innerHTML = movieDB.movies[i]
-}
-
-
-for (let i = 0; i < filmList.length; i++) {
-    filmList[i].innerHTML = i + 1 + ') ' + filmList[i].innerHTML;
-}
- */
+ 
 
 
