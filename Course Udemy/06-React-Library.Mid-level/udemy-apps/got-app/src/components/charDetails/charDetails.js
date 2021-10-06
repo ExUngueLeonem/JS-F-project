@@ -13,20 +13,17 @@ const CharDetailsDiv = styled.div`
     }
 `;
  
-const SelectError = styled.div`
-    color: #fff;
-    text-align: center;
-    font-size: 26px;
-
-`;
-
-const HeaderBlock = styled.div`
+const CharDetailsUl = styled.ul`
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 80px;
+    flex-direction: column;
+    padding-left: 0;
+    margin-bottom: 0;
+    border-radius: 0;
+    li {
+        
+    }
 `;
-
+//li bootstrap --> list-group-item d-flex justify-content-between
 /* 
 
 .char-details {
@@ -40,22 +37,23 @@ const HeaderBlock = styled.div`
     text-align: center;
 }
 
-.select-error {
-    color: #fff;
-    text-align: center;
-    font-size: 26px;
+.list-group list-group-flush {
+display: flex;
+flex-direction: column;
+padding-left: 0;
+margin-bottom: 0;
 }
 
 */
 
 
-
+//<ul className="list-group list-group-flush">
 class CharDetails extends Component {
     render() {
         return (
                     <CharDetailsDiv>
                         <h4>John Snow</h4>
-                    <ul className="list-group list-group-flush">
+                    <CharDetailsUl className="list-group-flush">
                         <li className="list-group-item d-flex justify-content-between">
                             <span className="term">Gender</span>
                             <span>male</span>
@@ -72,7 +70,7 @@ class CharDetails extends Component {
                             <span className="term">Culture</span>
                             <span>First</span>
                         </li>
-                    </ul>
+                    </CharDetailsUl>
                     </CharDetailsDiv>
         );
     }   
