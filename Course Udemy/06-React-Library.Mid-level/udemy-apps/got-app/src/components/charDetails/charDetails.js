@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import styled from 'styled-components';
- 
+import './charDetails.css'
+
 const CharDetailsDiv = styled.div`
     background-color: #fff;
     padding: 25px 25px 15px 25px;
