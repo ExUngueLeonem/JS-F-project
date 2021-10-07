@@ -23,31 +23,6 @@ const CharDetailsUl = styled.ul`
         
     }
 `;
-//li bootstrap --> list-group-item d-flex justify-content-between
-/* 
-
-.char-details {
-    background-color: #fff;
-    padding: 25px 25px 15px 25px;
-    margin-bottom: 40px;
-}
-
-.char-details h4 {
-    margin-bottom: 20px;
-    text-align: center;
-}
-
-.list-group list-group-flush {
-display: flex;
-flex-direction: column;
-padding-left: 0;
-margin-bottom: 0;
-}
-
-*/
-
-
-//<ul className="list-group list-group-flush">
 class CharDetails extends Component {
     render() {
         return (
