@@ -3,6 +3,14 @@ import './randomChar.css';
 
 export default class RandomChar extends Component {
 
+    state = {
+        name: null,
+        gender: null,
+        born: null,
+        died: null,
+        culture: null
+    }
+
     render() {
 
         return (
