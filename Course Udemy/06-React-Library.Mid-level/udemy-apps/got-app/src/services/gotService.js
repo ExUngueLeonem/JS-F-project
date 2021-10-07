@@ -41,17 +41,28 @@ export default class GotService {
     }
 
     _transformCharacter(char) {
-        return {
+
+        let character = {
             name: char.name,
             gender: char.gender,
             born: char.born,
             died: char.died,
             culture: char.culture   
         }
+
+        for (let value in character) {
+            if (!character[value]) {
+                character[value] = "---"
+            }
+        }
+
+        return character
+
     }
 
     _transformHouse(house) {
-        return {
+
+        let familyHouse = {
             name: house.name,
             region: house.region,
             words: house.words,
@@ -59,6 +70,14 @@ export default class GotService {
             overlord: house.overlord,
             ancestralWeapons: house.ancestralWeapons
         }
+
+        for (let value of familyHouse) {
+            if (!familyHouse[value]) {
+                familyHouse[value] = "---"
+            }
+        }
+
+        return familyHouse
     }
 
     _transformBook(book) {
