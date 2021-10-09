@@ -16,7 +16,7 @@ export default class GotService {
 
     async getAllCharacters() {
         const res = await this.getResource('/characters?page=5&pageSize=10');
-        return res.map( );
+        return res.map(a => a);
     }
 
     async getCharacter(id){

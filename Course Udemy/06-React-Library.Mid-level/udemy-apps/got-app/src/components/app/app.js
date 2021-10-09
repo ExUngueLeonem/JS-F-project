@@ -24,9 +24,13 @@ class App extends Component {
     }
 
     randomCharRender() {
-        let res = <Button color="info" 
-                          onClick={
-                              () => this.onToggleHideRandomChar(this.state.showRandomChar)}>не тыкай сюда</Button>
+        let res =   <div className='random-block rounded'>
+                    <Button color="info" 
+                            onClick={() => this.onToggleHideRandomChar(this.state.showRandomChar)}>
+                            Toggle random character field
+                    </Button>{' '}
+                    </div>
+
 
         if (this.state.showRandomChar) {
             return (

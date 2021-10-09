@@ -4,16 +4,22 @@ import gotService from '../../services/gotService'
 import Spinner from '../spinner';
 import ErrorMessage from '../errorMessage';
 export default class RandomChar extends Component {
-    constructor() {
-        super();
-        this.updateChar();
-    }
 
     gotService = new gotService();
-
     state = {
         char: {},
         loading: true
+    }
+
+    componentDidMount() {
+        console.log('mounting');
+        this.updateChar();
+        this.timerId = setInterval(this.updateChar, 4000);
+    }
+
+    componentWillUnmount() {
+        clearInterval(this.timerId);
+        console.log('unmounting');
     }
 
     onCharLoaded = (char) => {
@@ -31,7 +37,7 @@ export default class RandomChar extends Component {
         })
     }
 
-    updateChar() {
+    updateChar = () => {
         const id = Math.floor(Math.random()*140 + 25);
         //const id = 13000000;
         this.gotService.getCharacter(id)
@@ -40,6 +46,7 @@ export default class RandomChar extends Component {
     }
 
     render() {
+        console.log('render');
         const {char, loading, error } = this.state;
 
         const errorMessage = error ? <ErrorMessage/> : null;
