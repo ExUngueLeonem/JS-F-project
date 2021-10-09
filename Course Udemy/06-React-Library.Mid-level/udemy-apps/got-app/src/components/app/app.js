@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import {Col, Row, Container, Button} from 'reactstrap';
 import Header from '../header';
 import RandomChar from '../randomChar';
-import ItemList from '../itemList';
-import CharDetails from '../charDetails';
+import ErrorMessage from '../errorMessage';
+import CharacterPage from '../characterPage';
 
 
 class App extends Component {
@@ -11,17 +11,27 @@ class App extends Component {
         super(props);
 
         this.state = {
-            showRandomChar: true
+            showRandomChar: true,
+            error: false
         }
         
         this.onToggleHideRandomChar = this.onToggleHideRandomChar.bind(this);
         this.randomCharRender = this.randomCharRender.bind(this);
 
+        
+    }
+    
+    componentDidCatch() {
+        console.log('error');
+        this.setState({
+            error: true
+        })
     }
 
     onToggleHideRandomChar(stateValue) {
         this.setState({showRandomChar: !stateValue});
     }
+
 
     randomCharRender() {
         let res =   <div className='random-block rounded'>
@@ -43,6 +53,11 @@ class App extends Component {
     }
 
     render () {
+
+        if (this.state.error) {
+            return <ErrorMessage/>
+        }
+
         return (
             <> 
                 <Container>
@@ -55,14 +70,7 @@ class App extends Component {
                         </Col>
 
                     </Row>
-                    <Row>
-                        <Col md='6'>
-                            <ItemList />
-                        </Col>
-                        <Col md='6'>
-                            <CharDetails />
-                        </Col>
-                    </Row>
+                    <CharacterPage/>
                 </Container>
             </>
         );
