@@ -59,14 +59,15 @@ export default class GotService {
     }
 
     _transformCharacter = (char) => {
+        //let id = this._extractId(char);
 
         let character = {
             name: this.isSet(char.name),
             gender: this.isSet(char.gender),
             born: this.isSet(char.born),
             died: this.isSet(char.died),
-            culture: this.isSet(char.culture),
-               
+            culture: this.isSet(char.culture)//,
+            //id: id   
         }
 
         character.id = this._extractId(char);
@@ -76,8 +77,7 @@ export default class GotService {
     }
 
     _transformHouse = (house) => {
-
-        return {
+        let transformedHouse = {
             name: house.name,
             region: house.region,
             words: house.words,
@@ -85,6 +85,8 @@ export default class GotService {
             overlord: house.overlord,
             ancestralWeapons: house.ancestralWeapons
         }
+        transformedHouse.id = this._extractId(house);
+        return transformedHouse
 
         
         /* 
@@ -97,13 +99,16 @@ export default class GotService {
 
     }
 
-    _transformBook(book) {
-        return {
+    _transformBook = (book) => {
+        //let id = this._extractId(book);
+        let transformedBook = {
             name: book.name,
             numberOfPages: book.numberOfPages,
             publisher: book.publisher,
-            released: book.released
+            released: book.released           
         }
+        transformedBook.id = this._extractId(book);
+        return transformedBook
     }
     
 }
