@@ -54,7 +54,7 @@ export default class GotService {
     }
 
     _extractId = (item) => {
-        const idRegExp = /\/( [0-9]*)$/;
+        const idRegExp = /\/([0-9]*)$/;
         return item.url.match(idRegExp)[1];
     }
 
@@ -65,14 +65,17 @@ export default class GotService {
             gender: this.isSet(char.gender),
             born: this.isSet(char.born),
             died: this.isSet(char.died),
-            culture: this.isSet(char.culture)   
+            culture: this.isSet(char.culture),
+               
         }
+
+        character.id = this._extractId(char);
 
         return character
 
     }
 
-    _transformHouse(house) {
+    _transformHouse = (house) => {
 
         return {
             name: house.name,

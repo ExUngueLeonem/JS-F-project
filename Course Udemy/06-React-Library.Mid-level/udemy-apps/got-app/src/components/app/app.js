@@ -4,8 +4,10 @@ import Header from '../header';
 import RandomChar from '../randomChar';
 import ErrorMessage from '../errorMessage';
 import CharacterPage from '../characterPage';
-import ItemList from "../itemList";
+
+/* import ItemList from "../itemList";
 import CharDetails from "../charDetails";
+ */
 import gotService from '../../services/gotService';
 
 
