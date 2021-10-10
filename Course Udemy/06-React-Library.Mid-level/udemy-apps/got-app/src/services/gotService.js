@@ -14,6 +14,16 @@ export default class GotService {
         return await res.json();
     };
 
+    getAllBooks = async () => {
+        const res = await this.getResource(`/books/`);
+        return res.map(this._transformBook);
+    }
+
+    getBook = async (id) => {
+        const book = await this.getResource(`/books/${id}/`);
+        return this._transformBook(book);
+    }
+
     getAllCharacters = async () => {
         const res = await this.getResource('/characters?page=5&pageSize=10');
         return res.map(this._transformCharacter);
@@ -27,6 +37,7 @@ export default class GotService {
     getAllHouses = async () => {
         const res = await this.getResource('/houses/');
         return res.map(this._transformHouse);
+        
     }
 
     getHouse = async (id) => {
@@ -34,14 +45,12 @@ export default class GotService {
         return this._transformHouse(house);
     }
 
-    getAllBooks = async () => {
-        const res = await this.getResource(`/books/`);
-        return res.map(this._transformBook);
-    }
-
-    getBook = async (id) => {
-        const book = await this.getResource(`/books/${id}/`);
-        return this._transformBook(book);
+    isSet(data) {
+        if (data) {
+            return data
+        } else {
+            return 'no data'
+        }
     }
 
     _extractId = (item) => {
@@ -49,20 +58,14 @@ export default class GotService {
         return item.url.match(idRegExp)[1];
     }
 
-    _transformCharacter(char) {
+    _transformCharacter = (char) => {
 
         let character = {
-            name: char.name,
-            gender: char.gender,
-            born: char.born,
-            died: char.died,
-            culture: char.culture   
-        }
-
-        for (let value in character) {
-            if (!character[value]) {
-                character[value] = "---"
-            }
+            name: this.isSet(char.name),
+            gender: this.isSet(char.gender),
+            born: this.isSet(char.born),
+            died: this.isSet(char.died),
+            culture: this.isSet(char.culture)   
         }
 
         return character
@@ -71,7 +74,7 @@ export default class GotService {
 
     _transformHouse(house) {
 
-        let familyHouse = {
+        return {
             name: house.name,
             region: house.region,
             words: house.words,
@@ -89,7 +92,6 @@ export default class GotService {
         } 
         */
 
-        return familyHouse
     }
 
     _transformBook(book) {
