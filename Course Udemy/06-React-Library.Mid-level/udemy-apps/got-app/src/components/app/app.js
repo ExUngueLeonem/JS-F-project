@@ -5,9 +5,12 @@ import RandomChar from '../randomChar';
 import ErrorMessage from '../errorMessage';
 import CharacterPage from '../characterPage';
 import ItemList from "../itemList";
-import CharDetails from "../charDetails";
+import ItemDetails from "../itemDetails";
 import gotService from '../../services/gotService';
 
+import BookPage from '../bookPage'
+import HousePage from '../housePage';
+//CharDetails
 
 class App extends Component {
     gotService = new gotService();
@@ -78,29 +81,9 @@ class App extends Component {
                     </Row>
                     <CharacterPage/>
 
-                     <Row>
-                        <Col md='6'>
-                            <ItemList 
-                            ItemSelected={this.onItemSelected}
-                                getData={this.gotService.getAllBooks}
-                                renderItem={(item) => item.name}/>
-                        </Col>
-                        <Col md='6'>
-                            <CharDetails charId={this.state.selectedChar}/>
-                        </Col>
-                    </Row>
 
-                    <Row>
-                        <Col md='6'>
-                            <ItemList 
-                                onItemSelected={this.onItemSelected}
-                                getData={this.gotService.getAllHouses}
-                                renderItem={(item) => item.name}/>
-                        </Col>
-                        <Col md='6'>
-                            <CharDetails charId={this.state.selectedChar}/>
-                        </Col>
-                    </Row>
+                    <BookPage/>
+                    <HousePage/>
 
                 </Container>
             </>
