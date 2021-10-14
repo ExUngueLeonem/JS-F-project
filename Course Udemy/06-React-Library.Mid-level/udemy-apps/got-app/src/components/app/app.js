@@ -3,14 +3,11 @@ import {Col, Row, Container, Button} from 'reactstrap';
 import Header from '../header';
 import RandomChar from '../randomChar';
 import ErrorMessage from '../errorMessage';
-import CharacterPage from '../characterPage';
-import ItemList from "../itemList";
-import ItemDetails from "../itemDetails";
 import gotService from '../../services/gotService';
 
+import CharacterPage from '../characterPage';
 import BookPage from '../bookPage'
 import HousePage from '../housePage';
-//CharDetails
 
 class App extends Component {
     gotService = new gotService();
@@ -26,11 +23,8 @@ class App extends Component {
         this.onToggleHideRandomChar = this.onToggleHideRandomChar.bind(this);
         this.randomCharRender = this.randomCharRender.bind(this);
 
-        
     }
 
-
-    
     componentDidCatch() {
         console.log('error');
         this.setState({
@@ -79,9 +73,8 @@ class App extends Component {
                             {this.randomCharRender()}
                         </Col>
                     </Row>
+
                     <CharacterPage/>
-
-
                     <BookPage/>
                     <HousePage/>
 
