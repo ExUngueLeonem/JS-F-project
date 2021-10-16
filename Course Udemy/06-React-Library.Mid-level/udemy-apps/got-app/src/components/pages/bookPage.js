@@ -10,7 +10,7 @@ export default class BookPage extends Component {
     gotService = new gotService();
 
     state = {
-        selectedItem: 1,
+        selectedItem: null,
         error: false
     }
     
@@ -56,11 +56,3 @@ export default class BookPage extends Component {
         )
     }
 }
-
-
-/* charDetails полностью отвязать от персонажей 
-точно так же, как мы сделали с itemList
-создать различные страницы
-страница по отображению книг
-страница по отобрадению домов
-поместить их в отдельную папку в компоненты*/

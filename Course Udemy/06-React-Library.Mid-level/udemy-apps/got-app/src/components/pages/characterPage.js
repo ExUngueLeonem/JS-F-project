@@ -5,12 +5,11 @@ import ItemDetails, {Field} from "../itemDetails";
 import ErrorMessage from "../errorMessage";
 import gotService from '../../services/gotService';
 import RowBlock from '../rowBlock';
-
-export default class HousePage extends Component {
+export default class CharacterPage extends Component {
     gotService = new gotService();
 
     state = {
-        selectedItem: 1,
+        selectedItem: null,
         error: false
     }
     
@@ -36,19 +35,18 @@ export default class HousePage extends Component {
         const itemList = (
             <ItemList 
             onItemSelected={this.onItemSelected}
-            getData={this.gotService.getAllHouses}
-            renderItem={({name}) => `${name}`}/>
+            getData={this.gotService.getAllCharacters}
+            renderItem={({name, gender}) => `${name} (${gender})`}/>
         );
 
         const itemDetails = (
             <ItemDetails itemId={this.state.selectedItem}
-                         getData={this.gotService.getHouse}>
-                <Field field='region' label='Region'/>
-                <Field field='words' label='Words'/>
-                <Field field='titles' label='Titles'/>
-                <Field field='overlord' label='Overlord'/>
-                <Field field='ancestralWeapons' label='Ancestral weapons'/>
-
+                         getData={this.gotService.getCharacter}>
+                <Field field='gender' label='Gender'/>
+                <Field field='born' label='Born'/>
+                <Field field='died' label='Died'/>
+                <Field field='culture' label='Culture'/>
+                
             </ItemDetails>
         );
 
@@ -57,11 +55,3 @@ export default class HousePage extends Component {
         )
     }
 }
-
-
-/* charDetails полностью отвязать от персонажей 
-точно так же, как мы сделали с itemList
-создать различные страницы
-страница по отображению книг
-страница по отобрадению домов
-поместить их в отдельную папку в компоненты*/

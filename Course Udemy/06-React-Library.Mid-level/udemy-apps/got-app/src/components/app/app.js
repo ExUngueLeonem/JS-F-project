@@ -4,12 +4,9 @@ import Header from '../header';
 import RandomChar from '../randomChar';
 import ErrorMessage from '../errorMessage';
 import gotService from '../../services/gotService';
-import { BrowserRouter as Router, Route} from 'react-router-dom';
+import {BrowserRouter as Router, Route} from 'react-router-dom';
 
-import CharacterPage from '../characterPage';
-import BookPage from '../bookPage'
-import HousePage from '../housePage';
-
+import {CharacterPage, BookPage, HousePage, BooksItem} from '../pages'
 
 
 class App extends Component {
@@ -71,17 +68,27 @@ class App extends Component {
                     <Container>
                         <Header />
                     </Container>
+
                     <Container>
                         <Row>
                             <Col lg={{size: 5, offset: 0}}>
                                 {this.randomCharRender()}
                             </Col>
                         </Row>
+                        
                         <Route path='/' exact component={() => <h1>Welcome to GOT DB</h1>}/>
                         <Route path='/characters' component={CharacterPage}/>
                         <Route path='/houses' component={HousePage}/>
-                        <Route path='/books'exact component={BookPage}/>
-                        <Route path='/books/:id' />
+                        <Route path='/books' exact component={BookPage}/>
+                                                 
+                         <Route path='/book/:id' render={
+                            ({match, location, history}) => {
+                                console.log(match);
+                                console.log(location);
+                                console.log(history);
+                            return <BooksItem/>}
+                        }/>
+ {/* что-то накосячено с путем, как-то надо передавать переменную ID */}
                     </Container>
                 </div>
             </Router>
