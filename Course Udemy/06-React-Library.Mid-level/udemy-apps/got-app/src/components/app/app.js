@@ -77,9 +77,11 @@ class App extends Component {
                                 {this.randomCharRender()}
                             </Col>
                         </Row>
+                        <Route path='/' exact component={() => <h1>Welcome to GOT DB</h1>}/>
                         <Route path='/characters' component={CharacterPage}/>
-                        <Route path='/books' component={BookPage}/>
                         <Route path='/houses' component={HousePage}/>
+                        <Route path='/books'exact component={BookPage}/>
+                        <Route path='/books/:id' />
                     </Container>
                 </div>
             </Router>
