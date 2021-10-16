@@ -4,10 +4,13 @@ import Header from '../header';
 import RandomChar from '../randomChar';
 import ErrorMessage from '../errorMessage';
 import gotService from '../../services/gotService';
+import { BrowserRouter as Router, Route} from 'react-router-dom';
 
 import CharacterPage from '../characterPage';
 import BookPage from '../bookPage'
 import HousePage from '../housePage';
+
+
 
 class App extends Component {
     gotService = new gotService();
@@ -63,23 +66,23 @@ class App extends Component {
         }
 
         return (
-            <> 
-                <Container>
-                    <Header />
-                </Container>
-                <Container>
-                    <Row>
-                        <Col lg={{size: 5, offset: 0}}>
-                            {this.randomCharRender()}
-                        </Col>
-                    </Row>
-
-                    <CharacterPage/>
-                    <BookPage/>
-                    <HousePage/>
-
-                </Container>
-            </>
+            <Router>
+                <div className="app"> 
+                    <Container>
+                        <Header />
+                    </Container>
+                    <Container>
+                        <Row>
+                            <Col lg={{size: 5, offset: 0}}>
+                                {this.randomCharRender()}
+                            </Col>
+                        </Row>
+                        <Route path='/characters' component={CharacterPage}/>
+                        <Route path='/books' component={BookPage}/>
+                        <Route path='/houses' component={HousePage}/>
+                    </Container>
+                </div>
+            </Router>
         );
     }
 };
