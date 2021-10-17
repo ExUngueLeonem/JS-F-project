@@ -80,15 +80,20 @@ class App extends Component {
                         <Route path='/characters' component={CharacterPage}/>
                         <Route path='/houses' component={HousePage}/>
                         <Route path='/books' exact component={BookPage}/>
-                                                 
-                         <Route path='/book/:id' render={
-                            ({match, location, history}) => {
-                                console.log(match);
-                                console.log(location);
-                                console.log(history);
-                            return <BooksItem/>}
-                        }/>
+{/* 
+                        <Route path='/books:id' component={BooksItem}/>
+ */}                        
+                                                   
+                        <Route path='/books:id' render={
+                            ({match}) => {
+                                const {id} = match.params;
+                            return <BooksItem bookId={id}/>}
+                        }/> 
+
  {/* что-то накосячено с путем, как-то надо передавать переменную ID */}
+                        {/*                     
+                        <BooksItem/>
+                        */}                    
                     </Container>
                 </div>
             </Router>

@@ -1,5 +1,4 @@
 import React, {Component} from "react";
-import {Col, Row, Container} from 'reactstrap';
 import ItemList from "../itemList";
 import ItemDetails, {Field} from "../itemDetails";
 import ErrorMessage from "../errorMessage";
