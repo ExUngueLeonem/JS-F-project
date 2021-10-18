@@ -75,25 +75,17 @@ class App extends Component {
                                 {this.randomCharRender()}
                             </Col>
                         </Row>
-                        
-                        <Route path='/' exact component={() => <h1>Welcome to GOT DB</h1>}/>
+                        <Route path='/books/:id' render={
+                            ({match}) => {
+                                const {id} = match.params;
+                            return <BooksItem itemId={id}/>}
+                        }/> 
+
                         <Route path='/characters' component={CharacterPage}/>
                         <Route path='/houses' component={HousePage}/>
                         <Route path='/books' exact component={BookPage}/>
-{/* 
-                        <Route path='/books:id' component={BooksItem}/>
- */}                        
+                        <Route path='/' exact component={() => <h1>Welcome to GOT DB</h1>}/>
                                                    
-                        <Route path='/books:id' render={
-                            ({match}) => {
-                                const {id} = match.params;
-                            return <BooksItem bookId={id}/>}
-                        }/> 
-
- {/* что-то накосячено с путем, как-то надо передавать переменную ID */}
-                        {/*                     
-                        <BooksItem/>
-                        */}                    
                     </Container>
                 </div>
             </Router>
