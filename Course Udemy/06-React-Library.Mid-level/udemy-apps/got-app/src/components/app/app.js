@@ -78,7 +78,8 @@ class App extends Component {
                         <Route path='/books/:id' render={
                             ({match}) => {
                                 const {id} = match.params;
-                            return <BooksItem itemId={id}/>}
+                                console.log(match)
+                            return <BooksItem bookId={id}/>}
                         }/> 
 
                         <Route path='/characters' component={CharacterPage}/>
