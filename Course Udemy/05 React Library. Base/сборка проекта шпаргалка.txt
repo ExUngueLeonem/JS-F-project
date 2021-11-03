@@ -33,6 +33,7 @@ npm i create-react-app -g (сначала установим глобально)
 
 		       ||
 		       vv - название приоложения
+отсюда начинается старт
 npx create-react-app my-app
 cd my-app
 npm start
