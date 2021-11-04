@@ -68,6 +68,12 @@ npm install reactstrap bootstrap@4 --save
 рекурсивное глобальное обновление всех модулей
 npm update --depth 9999 --dev -g
 =============================================================
+=============================================================
+создаем папку
+npx create-react-app my-app
+cd my app
+
+npm install redux react-redux    ----- это установка двух разных библиотек redux и react-redux(связывает react и redux)
 
 
 
