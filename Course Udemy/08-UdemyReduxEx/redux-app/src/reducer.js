@@ -6,7 +6,6 @@ const reducer = (state = 5, action) => {
             return state - 1;  
         case 'RND':
             return state + action.value;
-
         default:
             return state;
 }

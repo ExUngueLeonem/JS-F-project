@@ -1,5 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
+import * as actions from '../actions';
+import {bindActionCreators} from 'redux';
 
 const Counter = ({counter, inc, dec, rnd}) => {
     return (
@@ -13,8 +15,18 @@ const Counter = ({counter, inc, dec, rnd}) => {
 }
 
 const mapStateToProps = (state) => { 
-    return {
+    return { //возвращаем объект с теми свойствами, которые мы хотим вытащить из нашего стейта
         counter: state
     }
 }
-export default connect(mapStateToProps)(Counter);//возвращает обернутый в функцию компонент
+
+const mapDispatchToProps = (dispatch) => {
+    const {inc, dec, rnd} = bindActionCreators(actions, dispatch); //почему это достается
+    return { //отдает экшены, которые мы ватаскиваем из actions
+        inc,
+        dec,
+        rnd
+    }
+}
+export default connect(mapStateToProps, mapDispatchToProps)(Counter);//возвращает обернутый в функцию компонент
+//принимает в себя конфигурацию и тот компонент, который мфы хотим связать
