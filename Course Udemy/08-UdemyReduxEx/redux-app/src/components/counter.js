@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import * as actions from '../actions';
-import {bindActionCreators} from 'redux';
+//import {bindActionCreators} from 'redux';
 
 const Counter = ({counter, inc, dec, rnd}) => {
     return (
@@ -20,13 +20,11 @@ const mapStateToProps = (state) => {
     }
 }
 
+/* 
 const mapDispatchToProps = (dispatch) => {
-    const {inc, dec, rnd} = bindActionCreators(actions, dispatch); //почему это достается
-    return { //отдает экшены, которые мы ватаскиваем из actions
-        inc,
-        dec,
-        rnd
-    }
+    return bindActionCreators(actions, dispatch); //почему это достается
 }
-export default connect(mapStateToProps, mapDispatchToProps)(Counter);//возвращает обернутый в функцию компонент
+ */
+
+export default connect(mapStateToProps, actions)(Counter);//возвращает обернутый в функцию компонент
 //принимает в себя конфигурацию и тот компонент, который мфы хотим связать
