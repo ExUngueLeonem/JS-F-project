@@ -1,5 +1,9 @@
 export default class RestoService {
-    getMenuItems() {
-        return [];
+    async getMenuItems() {
+        let menuTitle =[];
+        await fetch('http://localhost:3000/menu')
+            .then(res => res.json())
+            .then(res => {return menuTitle = res.map(obj => obj.title)});
+        return menuTitle;
     }
 }

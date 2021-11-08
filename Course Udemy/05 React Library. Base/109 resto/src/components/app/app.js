@@ -6,7 +6,7 @@ import WithRestoService from '../hoc';
 import Background from './food-bg.jpg';
 
 const App = ({RestoService}) => {
-    console.log(RestoService.getMenuItems())
+    console.log(RestoService.getMenuItems())//асинхронная функция, console.log вызовется раньше, чем придет ответ
     return (
         <div style={{background: `url(${Background}) center center/cover no-repeat`}} className="app">
             <AppHeader total={50}/>

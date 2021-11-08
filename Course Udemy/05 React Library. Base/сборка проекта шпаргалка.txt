@@ -75,6 +75,17 @@ cd my app
 
 npm install redux react-redux    ----- это установка двух разных библиотек redux и react-redux(связывает react и redux)
 
+=============================================================
+запуск json-server: (json-server src/путь к файлу DB.json)
+
+json-server src/db.json
+(потом можно запустить npm start во втором терминале,
+он предложит поменять порт, соглашаемся)
+в документации есть настройка --port 3004
+example - $ json-server --watch db.json --port 3004
+
+
+
 
 
 
