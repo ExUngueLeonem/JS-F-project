@@ -4,7 +4,13 @@ const menuLoaded =  (newMenu) => {
         payload: newMenu
     }
 }
+const menuRequested =  () => {
+    return {
+        type: 'MENU_REQUESTED',
+    }
+}
 
 export {
-    menuLoaded
+    menuLoaded,
+    menuRequested
 };

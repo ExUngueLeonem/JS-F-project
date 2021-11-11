@@ -5,10 +5,10 @@ import './app-header.scss';
 const AppHeader = ({total}) => {
     return (
         <header className="header">
-            <a className="header__link" href="#">
+            <a className="header__link" href="/">
                 Menu
             </a>
-            <a className="header__link" href="#">
+            <a className="header__link" href="/cart">
                 <img className="header__cart" src={cartIcon} alt="cart"></img>
                 Total: {total} $
             </a>
