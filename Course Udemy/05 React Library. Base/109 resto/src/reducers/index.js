@@ -1,22 +1,7 @@
 const initialState = {
     menu: [],
     loading: true,
-    items: [		
-    {
-        "title": "Greece salad",
-        "price": 8,
-        "url": "https://assets.epicurious.com/photos/576454fb42e4a5ed66d1df6b/master/pass/greek-salad.jpg",
-        "category": "salads",
-        "id": 4
-    },
-    {
-        "title": "Cowboy Steak",
-        "price": 25,
-        "url": "https://i.cbc.ca/1.4491288.1516208229!/fileImage/httpImage/image.jpg_gen/derivatives/16x9_780/cowboysteak.jpg",
-        "category": "meat",
-        "id": 5
-    }
-]
+    items: []
 }
 
 const reducer = (state = initialState, action) => {
@@ -34,7 +19,26 @@ const reducer = (state = initialState, action) => {
                 menu: state.menu,
                 loading: true
             };
-            
+        //ITEM_ADD_TO_CART
+        case 'ITEM_ADD_TO_CART':
+            const id = action.payload;
+            const item = state.menu.find(item => item.id === id);
+            const newItem = {
+                title: item.title, 
+                price: item.price,
+                url: item.url,
+                id: item.id
+            };
+
+            return {
+                ...state,
+                items: [
+                    ...state.items,
+                    newItem
+                ]
+                
+            };
+
         default:
             return state;   
     }

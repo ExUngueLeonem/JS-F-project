@@ -38,4 +38,4 @@ const mapDispatchToProps = () => {
         }
     }
 }
-export default connect(mapStateToProps)(CartTable);
+export default connect(mapStateToProps, mapDispatchToProps)(CartTable);
