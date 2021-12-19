@@ -84,7 +84,10 @@ json-server src/db.json
 в документации есть настройка --port 3004
 example - $ json-server --watch db.json --port 3004
 
+=============================================================
 
+npm install @reduxjs/toolkit
+npm install react-redux
 
 
 
