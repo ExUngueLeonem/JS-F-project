@@ -1,0 +1,56 @@
+body{
+    font-family: serif;
+}
+
+.about {
+
+    &__body {
+    }
+
+    &__header {
+    }
+
+    &__title {
+        margin: 0px 0px 30px 0px;
+    }
+
+    &__text {
+    }
+
+    &__row {
+    }
+
+    &__column {
+    }
+}
+.title {
+    /* не даем никаких отступов для БЛОКА title, но
+    даем отступы для ЭЛЕМЕНТА title блока about*/
+    font-size: 34px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 8.95px;
+    position: relative;
+    text-align: center;
+    &:after{
+        content: '';
+        position: absolute;
+        width: 50px;
+        bottom: 0;
+        height: 1px;
+        left: 50%;
+        background-color: #000;
+        margin: 0px 0px 0px -25px;
+    }
+}
+.item-about {
+
+    &__icon {
+    }
+
+    &__title {
+    }
+
+    &__text {
+    }
+}
