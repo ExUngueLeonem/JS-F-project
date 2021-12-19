@@ -1,7 +1,42 @@
+@charset "UTF-8";
 /* Welcome to Compass.
  * In this file you should write your main styles. (or centralize your imports)
  * Import this file using the following HTML or equivalent:
  * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap");
+/* line 7, ../sass/screen.scss */
+body {
+  font-family: Lato;
+}
+
+/* line 20, ../sass/screen.scss */
+.about__title {
+  margin: 0px 0px 40px 0px;
+}
+
+/* line 33, ../sass/screen.scss */
+.title {
+  /* не даем никаких отступов для БЛОКА title, но
+  даем отступы для ЭЛЕМЕНТА title блока about*/
+  font-size: 34px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 8.95px;
+  position: relative;
+  text-align: center;
+}
+/* line 42, ../sass/screen.scss */
+.title:after {
+  content: '';
+  position: absolute;
+  width: 50px;
+  bottom: 0;
+  height: 2px;
+  left: 50%;
+  background-color: #000;
+  margin: 0px 0px 0px -25px;
+}
+
 /* line 5, ../../../../../../../Ruby30-x64/lib/ruby/gems/3.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,

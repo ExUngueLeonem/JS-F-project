@@ -2,5 +2,65 @@
  * In this file you should write your main styles. (or centralize your imports)
  * Import this file using the following HTML or equivalent:
  * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap");
+
+body{
+    font-family: Lato;
+}
+
+.about {
+     
+    
+    &__body {
+    }
+
+    &__header {
+    }
+
+    &__title {
+        margin: 0px 0px 40px 0px;
+    }
+
+    &__text {
+    }
+
+    &__row {
+    }
+
+    &__column {
+    }
+}
+.title {
+    /* не даем никаких отступов для БЛОКА title, но
+    даем отступы для ЭЛЕМЕНТА title блока about*/
+    font-size: 34px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 8.95px;
+    position: relative;
+    text-align: center;
+    &:after{
+        content: '';
+        position: absolute;
+        width: 50px;
+        bottom: 0;
+        height: 2px;
+        left: 50%;
+        background-color: #000;
+        margin: 0px 0px 0px -25px;
+    }
+}
+.item-about {
+
+    &__icon {
+    }
+
+    &__title {
+    }
+
+    &__text {
+    }
+}
+
 
 @import "compass/reset";
